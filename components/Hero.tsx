@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BellRing, Brain, CheckCircle2, Cloud, FileText, ShieldCheck, SquareCheckBig } from "lucide-react";
+import { Brain, CalendarDays, CheckCircle2, FileText, Languages, ShieldCheck, Siren } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { FloatMotion, HeroMotion } from "@/components/Motion";
@@ -28,34 +28,34 @@ function CanadianFlag() {
 
 const heroFeatures = [
   {
-    icon: Brain,
-    title: "AI Assistant",
-    body: "Get instant answers and intelligent help."
-  },
-  {
-    icon: SquareCheckBig,
-    title: "Task Management",
-    body: "Create tasks, set deadlines, and stay on track."
-  },
-  {
-    icon: BellRing,
-    title: "Smart Reminders",
-    body: "Never miss what matters with smart notifications."
+    icon: Siren,
+    title: "Start My Shift",
+    body: "Review key reminders before duty."
   },
   {
     icon: FileText,
-    title: "Notes & Organization",
-    body: "Keep notes, ideas, and important info organized."
+    title: "New Incident",
+    body: "Organize notes, files, and report details."
   },
   {
-    icon: Cloud,
-    title: "Sync Everywhere",
-    body: "Access your data anytime, anywhere."
+    icon: Languages,
+    title: "Translation",
+    body: "Support text, voice, and conversation workflows."
+  },
+  {
+    icon: CalendarDays,
+    title: "Calendar",
+    body: "Track court, training, and shift reminders."
+  },
+  {
+    icon: Brain,
+    title: "AI Assistant",
+    body: "Draft, review, search, and summarize."
   },
   {
     icon: ShieldCheck,
     title: "Secure & Private",
-    body: "Your privacy matters. Your data is safe."
+    body: "Designed around consent and careful data handling."
   }
 ];
 
@@ -87,12 +87,13 @@ export function Hero() {
             OPA<span className="text-opai-blue">i</span>
           </h1>
           <p className="mt-3 text-xl font-semibold uppercase tracking-[0.16em] text-white/78 sm:text-2xl">
-            Operational Police Ai
+            The AI Assistant Built for Law Enforcement
           </p>
           <p className="mt-4 text-2xl font-semibold text-opai-blue sm:text-3xl">Organize. Plan. Focus. Achieve.</p>
           <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-            OPAi is an all-in-one operational AI assistant created for Canadian police officers, helping members stay
-            organized, save time, and manage the daily pressure of service with clarity and confidence.
+            Operational Police Ai helps Canadian police officers manage productivity, calendars, incident organization,
+            translation, court reminders, training reminders, officer readiness, and PTSD awareness with clarity and
+            confidence.
           </p>
 
           <StoreButtons className="mt-8" />
@@ -122,7 +123,7 @@ export function Hero() {
           <div className="glass relative overflow-hidden rounded-[8px]">
             <Image
               src="/images/opai-hero.png"
-              alt="Premium mobile app mockup for OPAi public safety wellness"
+              alt="Premium mobile app mockup for OPAi Police law-enforcement workflows"
               width={1536}
               height={864}
               priority

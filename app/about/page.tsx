@@ -7,7 +7,8 @@ import { differentiators } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Learn about OPAi, the intelligent AI assistant supporting productivity, public safety, and PTSD awareness."
+  description:
+    "Learn about OPAi, Operational Police Ai, the law-enforcement AI assistant supporting productivity, officer readiness, and PTSD awareness."
 };
 
 export default function AboutPage() {
@@ -15,8 +16,8 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About OPAi"
-        title="Your intelligent AI assistant, built with purpose."
-        body="OPAi helps people organize, plan, focus, and achieve while raising awareness for PTSD and supporting public safety communities."
+        title="Operational Police Ai, built with purpose."
+        body="OPAi is a professional AI platform for law enforcement, beginning with OPAi Police for Canadian police officers and expanding from a trusted product foundation."
       />
       <section className="py-20">
         <Container>

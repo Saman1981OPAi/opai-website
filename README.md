@@ -4,7 +4,7 @@ Official corporate website for [opaiapp.com](https://opaiapp.com).
 
 ## Project 001
 
-This website establishes the OPAi brand, introduces the flagship OPAi Police product, tells the founder story, promotes PTSD awareness, and provides App Store and Google Play download pathways.
+This website establishes the OPAi brand, introduces the flagship OPAi Police product, tells the founder story, promotes PTSD awareness, and provides App Store and Google Play coming-soon pathways.
 
 ## Stack
 
@@ -53,4 +53,4 @@ pnpm build
 
 ## Deployment
 
-The app is ready for Vercel or any host that supports Next.js 15. Set the production domain to `opaiapp.com`.
+The app is configured for static export and GitHub Pages deployment with the production domain `opaiapp.com`.

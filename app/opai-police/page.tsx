@@ -9,7 +9,8 @@ import { policeFeatures } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "OPAi Police",
-  description: "OPAi Police supports officer wellness, public safety communication, and trusted community resource access."
+  description:
+    "OPAi Police is an AI assistant for law enforcement, supporting officer readiness, incident organization, translation, calendar management, court reminders, training reminders, and PTSD awareness."
 };
 
 export default function OpaiPolicePage() {
@@ -17,8 +18,8 @@ export default function OpaiPolicePage() {
     <>
       <PageHero
         eyebrow="OPAi Police"
-        title="A modern wellness layer for public safety communities."
-        body="OPAi Police is shaped for the realities of service work: pressure, privacy, trust, and a need for direct access to clear support."
+        title="The AI assistant built for law enforcement."
+        body="OPAi Police is shaped for Canadian police officers who need practical support for productivity, shift readiness, incidents, translation, calendar management, court, training, notifications, and PTSD awareness."
       />
       <section className="py-20">
         <Container>
@@ -34,8 +35,8 @@ export default function OpaiPolicePage() {
           <div className="grid gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-center">
             <SectionHeader
               eyebrow="Designed for trust"
-              title="Readable, respectful, and ready for high-stakes environments."
-              body="A public safety platform must feel credible at first glance and dependable after repeated use. OPAi keeps the interface calm, the language direct, and the pathways obvious."
+              title="Readable, respectful, and ready for operational pressure."
+              body="A law-enforcement AI assistant must feel credible at first glance and dependable after repeated use. OPAi keeps the interface calm, the language direct, and the workflows obvious."
             />
             <FadeIn className="glass rounded-[8px] p-8">
               <dl className="grid gap-6 sm:grid-cols-3">
@@ -49,7 +50,7 @@ export default function OpaiPolicePage() {
                 </div>
                 <div>
                   <dt className="text-sm text-white/48">Focus</dt>
-                  <dd className="mt-2 text-2xl font-semibold text-white">Wellness</dd>
+                  <dd className="mt-2 text-2xl font-semibold text-white">Readiness</dd>
                 </div>
               </dl>
             </FadeIn>

@@ -1,9 +1,12 @@
 import Link from "next/link";
 import { CheckCircle2, Ribbon, ShieldCheck, Smartphone, UserRound } from "lucide-react";
 import { Container } from "@/components/Container";
+import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { FadeIn } from "@/components/Motion";
+import { SectionHeader } from "@/components/SectionHeader";
 import { StoreButtons } from "@/components/StoreButtons";
+import { featureCards } from "@/lib/site";
 
 const whyItems = [
   "Increase productivity and save time on duty",
@@ -17,6 +20,22 @@ export default function HomePage() {
   return (
     <>
       <Hero />
+
+      <section className="py-16">
+        <Container>
+          <SectionHeader
+            eyebrow="OPAi Police features"
+            title="Built around the daily realities of law enforcement."
+            body="From shift readiness to incident organization, translation, calendar reminders, court, training, AI assistance, notes, files, and notifications, OPAi Police is shaped for practical officer support."
+            align="center"
+          />
+          <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {featureCards.map((feature, index) => (
+              <FeatureCard key={feature.title} {...feature} index={index} />
+            ))}
+          </div>
+        </Container>
+      </section>
 
       <section className="pb-16 pt-6">
         <Container>

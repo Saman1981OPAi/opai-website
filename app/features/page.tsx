@@ -9,14 +9,15 @@ import { featureCards } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Features",
-  description: "Explore OPAi product features for safety, wellness, PTSD awareness, privacy, and resource access."
+  description:
+    "Explore OPAi Police features for shift readiness, incidents, translation, calendar, court, training, AI assistance, notes, files, and notifications."
 };
 
 const workflow = [
-  "Open the app with a clean, low-friction interface.",
-  "Review safety, wellness, or PTSD awareness resources.",
-  "Use check-ins and guided prompts to move toward the right next step.",
-  "Connect with support pathways designed for dignity and privacy."
+  "Start a shift with quick reminders instead of a forced checklist.",
+  "Capture an incident with notes, people, media, documents, and evidence references in one flow.",
+  "Use AI to draft, review, translate, summarize, search, and prepare follow-ups.",
+  "Stay ahead of court, training, requalification, and shift reminders."
 ];
 
 export default function FeaturesPage() {
@@ -24,8 +25,8 @@ export default function FeaturesPage() {
     <>
       <PageHero
         eyebrow="Features"
-        title="Focused tools for safety, wellness, and trusted support."
-        body="OPAi is designed around fast comprehension, human-centered interaction, and a premium experience that stays out of the way."
+        title="Operational tools for modern law enforcement."
+        body="OPAi Police is designed for shift readiness, incident organization, translation, court reminders, training reminders, calendar management, AI assistance, and PTSD awareness."
       />
       <section className="py-20">
         <Container>
@@ -40,8 +41,8 @@ export default function FeaturesPage() {
         <Container>
           <SectionHeader
             eyebrow="Workflow"
-            title="Clear steps instead of cognitive overload."
-            body="The experience is structured for stressful moments, when people need fewer decisions and more confidence."
+            title="Useful reminders without administrative drag."
+            body="The experience is structured for officers who need clarity, speed, and confidence without being forced through unnecessary reporting steps."
           />
           <div className="mt-10 grid gap-4 lg:grid-cols-4">
             {workflow.map((step, index) => (

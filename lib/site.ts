@@ -1,19 +1,21 @@
 import {
-  Activity,
   BadgeCheck,
   BellRing,
   Brain,
   Building2,
+  CalendarDays,
+  ClipboardCheck,
   FileLock2,
+  Files,
+  Gavel,
+  GraduationCap,
   HeartPulse,
-  Landmark,
-  LifeBuoy,
+  Languages,
   LockKeyhole,
   MapPinned,
   MessageCircle,
   Phone,
   RadioTower,
-  ShieldCheck,
   Siren,
   Sparkles,
   Users
@@ -39,52 +41,67 @@ export const navItems = [
 
 export const featureCards = [
   {
-    icon: ShieldCheck,
-    title: "Trusted safety layer",
-    body: "A composed mobile experience for safety check-ins, resource discovery, and timely support."
+    icon: Siren,
+    title: "Start My Shift",
+    body: "A reminder screen for cruiser, equipment, radio, MDT, court, follow-up, training, and requalification checks without creating administrative burden."
+  },
+  {
+    icon: ClipboardCheck,
+    title: "New Incident",
+    body: "Guided incident organization for type, time, location, people involved, witnesses, notes, photos, documents, audio, evidence references, and AI report drafting."
+  },
+  {
+    icon: Languages,
+    title: "Translation",
+    body: "Dedicated text, voice, conversation, document, and camera translation workflows shaped for police-context communication."
+  },
+  {
+    icon: CalendarDays,
+    title: "Calendar",
+    body: "AI-assisted scheduling for court dates, meetings, training, requalification, shift reminders, follow-up deadlines, and notifications."
+  },
+  {
+    icon: Gavel,
+    title: "Court Reminders",
+    body: "Clear reminders for court dates, preparation windows, follow-ups, and important deadlines that cannot be missed."
+  },
+  {
+    icon: GraduationCap,
+    title: "Training & Requalification",
+    body: "Track firearms, Use of Force, CEW, CPR, First Aid, annual requalification, and other training deadlines."
   },
   {
     icon: Brain,
-    title: "PTSD-aware design",
-    body: "Built around calm interaction patterns, low-friction access, and trauma-informed content pathways."
+    title: "AI Assistant",
+    body: "Police-focused AI actions for drafting, reviewing reports, reviewing grounds, translation, policy search, note summaries, and follow-up lists."
+  },
+  {
+    icon: Files,
+    title: "Notes & Files",
+    body: "Organize notes, documents, photos, audio, and evidence references with privacy-aware handling and clear consent."
   },
   {
     icon: BellRing,
-    title: "Smart notifications",
-    body: "Clear, respectful alerts for important moments without overwhelming the person using the app."
-  },
-  {
-    icon: FileLock2,
-    title: "Privacy-first foundation",
-    body: "Security, consent, and careful data handling are core to the platform experience."
-  },
-  {
-    icon: LifeBuoy,
-    title: "Guided resources",
-    body: "Fast access to support options, education, and practical next steps when clarity matters."
-  },
-  {
-    icon: Activity,
-    title: "Wellness insights",
-    body: "Readable status views help people notice patterns and seek support earlier."
+    title: "Notifications",
+    body: "Standard reminders, persistent reminders, and optional call-style alerts for court, training, and qualification deadlines."
   }
 ];
 
 export const policeFeatures = [
   {
     icon: Siren,
-    title: "Officer wellness support",
-    body: "Designed for quick access to wellness resources that fit the pace and sensitivity of public safety work."
+    title: "Officer readiness",
+    body: "Designed around shift preparation, court dates, training deadlines, and the operational reminders that help officers stay prepared."
   },
   {
     icon: RadioTower,
     title: "Operational clarity",
-    body: "A direct, organized experience for communication, education, and service-aware information."
+    body: "A direct, organized experience for incidents, translation, calendar management, notes, files, and police-focused AI assistance."
   },
   {
-    icon: Landmark,
-    title: "Community trust",
-    body: "Supports a modern public-facing posture with transparent resources and accessible help pathways."
+    icon: FileLock2,
+    title: "Security-first foundation",
+    body: "Built toward encryption, role-based access, audit logs, biometric login, Canadian privacy compliance, and consent-led access."
   }
 ];
 
@@ -109,23 +126,23 @@ export const awarenessCards = [
 export const timeline = [
   {
     date: "Origin",
-    title: "A mission shaped by lived need",
-    body: "OPAi begins with the belief that high-pressure service communities deserve calmer, smarter access to support."
+    title: "Built from lived police experience",
+    body: "OPAi was created by a medically retired Canadian police officer and PTSD survivor who saw the need for better officer support."
   },
   {
     date: "Research",
-    title: "Trauma-informed product planning",
-    body: "The platform centers privacy, accessibility, trust, and a low-clutter experience for sensitive moments."
+    title: "Operational workflows first",
+    body: "The platform centers shift readiness, incident organization, translation, calendar management, court reminders, and training reminders."
   },
   {
     date: "Build",
-    title: "Mobile-first public safety design",
-    body: "Core workflows are shaped for fast decisions, readable information, and support that feels close at hand."
+    title: "Mobile-first police design",
+    body: "Core workflows are shaped for fast decisions, readable information, privacy, and support that feels close at hand."
   },
   {
     date: "Launch",
-    title: "Community adoption",
-    body: "OPAi is prepared for app distribution, organizational partnerships, and ongoing product refinement."
+    title: "Website, design system, app MVP",
+    body: "OPAi begins with the official website, then moves into the design system, mobile screens, and the future app architecture."
   }
 ];
 

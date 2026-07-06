@@ -7,7 +7,8 @@ import { Timeline } from "@/components/Timeline";
 
 export const metadata: Metadata = {
   title: "Founder Story",
-  description: "The founder story behind OPAi and its mission to support PTSD awareness and public safety wellness."
+  description:
+    "The founder story behind OPAi, created by a medically retired Canadian police officer and PTSD survivor to help officers stay organized, productive, and prepared."
 };
 
 export default function FounderStoryPage() {
@@ -15,15 +16,15 @@ export default function FounderStoryPage() {
     <>
       <PageHero
         eyebrow="Founder Story"
-        title="A mission to make support feel closer, calmer, and easier to reach."
-        body="OPAi is built around a simple belief: when people are under pressure, the right support should be clear, respectful, and immediately accessible."
+        title="Created by a medically retired Canadian police officer and PTSD survivor."
+        body="OPAi was born from lived service experience and a clear mission: build technology that helps officers stay organized, productive, prepared, and more supported."
       />
       <section className="py-20">
         <Container>
           <SectionHeader
             eyebrow="Journey"
-            title="The path from purpose to product."
-            body="The founder story is reflected in the product choices: reduced friction, dignity in every interaction, and a design language that earns trust."
+            title="The path from lived experience to Operational Police Ai."
+            body="The founder story is reflected in the product choices: practical reminders, reduced friction, privacy, dignity in every interaction, and a design language that earns trust."
             align="center"
           />
           <div className="mt-14">
