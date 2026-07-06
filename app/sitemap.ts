@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { navItems, site } from "@/lib/site";
 
+export const dynamic = "force-static";
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const secondary = ["/opai-police", "/download", "/privacy-policy", "/terms-of-service"];
   const paths = Array.from(new Set([...navItems.map((item) => item.href), ...secondary]));
