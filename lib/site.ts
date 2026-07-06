@@ -25,7 +25,7 @@ export const site = {
   description:
     "OPAi, Operational Police Ai, is a premium mobile platform designed for Canadian police officers, supporting operational productivity, PTSD awareness, wellness resources, and secure public safety workflows.",
   url: "https://opaiapp.com",
-  email: "hello@opaiapp.com"
+  email: "Admin@opaiapp.com"
 };
 
 export const navItems = [

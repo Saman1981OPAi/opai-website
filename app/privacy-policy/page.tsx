@@ -26,7 +26,7 @@ const sections = [
   },
   {
     title: "Contact",
-    body: "For privacy questions, contact hello@opaiapp.com."
+    body: "For privacy questions, contact Admin@opaiapp.com."
   }
 ];
 
