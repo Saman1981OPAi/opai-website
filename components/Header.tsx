@@ -29,7 +29,7 @@ export function Header() {
             <span className="block text-xl font-black leading-none text-white">
               OPA<span className="text-opai-blue">i</span>
             </span>
-            <span className="block text-[10px] uppercase tracking-[0.24em] text-opai-blue-soft">Ontario Police AI</span>
+            <span className="block text-[10px] uppercase tracking-[0.24em] text-opai-blue-soft">Operational Police Ai</span>
           </span>
         </Link>
 

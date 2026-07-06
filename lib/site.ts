@@ -21,9 +21,9 @@ import {
 
 export const site = {
   name: "OPAi",
-  title: "OPAi | Intelligent support for safer, stronger communities",
+  title: "OPAi | Operational Police Ai for Canadian Police Officers",
   description:
-    "OPAi is a premium mobile platform designed to support public safety, PTSD awareness, wellness resources, and secure community connection.",
+    "OPAi, Operational Police Ai, is a premium mobile platform designed for Canadian police officers, supporting operational productivity, PTSD awareness, wellness resources, and secure public safety workflows.",
   url: "https://opaiapp.com",
   email: "hello@opaiapp.com"
 };

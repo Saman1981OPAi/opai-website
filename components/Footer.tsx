@@ -14,11 +14,12 @@ export function Footer() {
             </span>
             <span>
               <span className="block text-2xl font-black">OPA<span className="text-opai-blue">i</span></span>
-              <span className="block text-[10px] uppercase tracking-[0.22em] text-opai-blue-soft">Ontario Police AI</span>
+              <span className="block text-[10px] uppercase tracking-[0.22em] text-opai-blue-soft">Operational Police Ai</span>
             </span>
           </Link>
           <p className="mt-5 max-w-md text-sm leading-7 text-white/62">
-            OPAi is more than an app. It is a mission to improve productivity and raise PTSD awareness.
+            Operational Police Ai is built for Canadian police officers, with a mission to improve productivity and
+            raise PTSD awareness.
           </p>
         </div>
 

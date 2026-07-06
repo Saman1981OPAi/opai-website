@@ -5,6 +5,27 @@ import { Container } from "@/components/Container";
 import { FloatMotion, HeroMotion } from "@/components/Motion";
 import { StoreButtons } from "@/components/StoreButtons";
 
+function CanadianFlag() {
+  return (
+    <span
+      className="grid h-8 w-12 shrink-0 grid-cols-[1fr_2fr_1fr] overflow-hidden rounded-[3px] border border-white/30 shadow-[0_0_18px_rgba(255,255,255,0.12)]"
+      aria-label="Canadian flag"
+      role="img"
+    >
+      <span className="bg-[#FF0000]" />
+      <span className="grid place-items-center bg-white">
+        <svg className="h-5 w-5 text-[#FF0000]" viewBox="0 0 64 64" aria-hidden="true">
+          <path
+            fill="currentColor"
+            d="M32 4 27.7 18.2 18 12.5l3.9 13.4-12.8-1.5 9.7 9.5-6.3 5.2 14.6 2.1L25.5 56h13l-1.6-14.8 14.6-2.1-6.3-5.2 9.7-9.5-12.8 1.5L46 12.5l-9.7 5.7L32 4Z"
+          />
+        </svg>
+      </span>
+      <span className="bg-[#FF0000]" />
+    </span>
+  );
+}
+
 const heroFeatures = [
   {
     icon: Brain,
@@ -58,22 +79,33 @@ export function Hero() {
       </div>
       <Container className="relative grid items-center gap-10 py-12 sm:py-14 lg:min-h-[650px] lg:grid-cols-[0.92fr_1.08fr] lg:py-10">
         <HeroMotion>
-          <p className="mb-5 inline-flex rounded-full border border-opai-blue/40 bg-opai-blue/10 px-4 py-2 text-sm font-semibold text-opai-blue-soft">
-            Proudly supporting <span className="ml-1 text-ptsd-green">PTSD Awareness</span>
+          <p className="mb-5 inline-flex items-center gap-3 rounded-full border border-opai-blue/40 bg-opai-blue/10 px-4 py-2 text-sm font-semibold text-opai-blue-soft">
+            <CanadianFlag />
+            Built for Canadian police officers
           </p>
           <h1 className="max-w-4xl text-6xl font-black tracking-normal text-white sm:text-7xl lg:text-8xl">
             OPA<span className="text-opai-blue">i</span>
           </h1>
           <p className="mt-3 text-xl font-semibold uppercase tracking-[0.16em] text-white/78 sm:text-2xl">
-            Your intelligent AI assistant
+            Operational Police Ai
           </p>
           <p className="mt-4 text-2xl font-semibold text-opai-blue sm:text-3xl">Organize. Plan. Focus. Achieve.</p>
           <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-            OPAi is your all-in-one AI assistant that helps you stay organized, save time, and get more done at work,
-            at home, and everywhere in between.
+            OPAi is an all-in-one operational AI assistant created for Canadian police officers, helping members stay
+            organized, save time, and manage the daily pressure of service with clarity and confidence.
           </p>
 
           <StoreButtons className="mt-8" />
+
+          <div className="mt-7 flex flex-wrap items-center gap-3 text-sm font-semibold text-white/70">
+            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2">
+              <CanadianFlag />
+              Canada-only public safety focus
+            </span>
+            <span className="rounded-full border border-ptsd-green/30 bg-ptsd-green/10 px-4 py-2 text-ptsd-green">
+              PTSD awareness remains part of the mission
+            </span>
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <ButtonLink href="/founder-story" variant="secondary" className="min-h-11 px-5">
@@ -101,9 +133,11 @@ export function Hero() {
           <div className="glass absolute bottom-4 left-4 hidden max-w-xs rounded-[8px] p-4 sm:block">
             <p className="flex items-center gap-2 text-sm font-semibold text-white">
               <CheckCircle2 className="size-4 text-ptsd-green" aria-hidden="true" />
-              Built with purpose
+              Canada-first policing support
             </p>
-            <p className="mt-2 text-xs leading-5 text-white/58">Productivity, wellness, and PTSD awareness in one app.</p>
+            <p className="mt-2 text-xs leading-5 text-white/58">
+              Operational productivity, wellness, and PTSD awareness for Canadian police officers.
+            </p>
           </div>
         </FloatMotion>
       </Container>

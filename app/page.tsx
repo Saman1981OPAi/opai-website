@@ -6,11 +6,11 @@ import { FadeIn } from "@/components/Motion";
 import { StoreButtons } from "@/components/StoreButtons";
 
 const whyItems = [
-  "Increase productivity and save time",
-  "Organize your life and responsibilities",
-  "Make better decisions with AI support",
-  "Stay focused on what matters most",
-  "Built with purpose. Driven by experience."
+  "Increase productivity and save time on duty",
+  "Organize responsibilities across demanding shifts",
+  "Make better decisions with operational AI support",
+  "Stay focused on what matters most in Canadian policing",
+  "Built with purpose. Driven by police experience."
 ];
 
 export default function HomePage() {
@@ -32,8 +32,9 @@ export default function HomePage() {
                 </p>
                 <h2 className="mt-3 text-2xl font-semibold text-white">Created by a Canadian former police officer.</h2>
                 <p className="mt-4 text-sm leading-7 text-white/68">
-                  OPAi was shaped by service, personal struggle, and a clear mission: build technology that helps people
-                  become more productive while supporting mental health and raising PTSD awareness.
+                  Operational Police Ai was shaped by service, personal struggle, and a clear mission: build technology
+                  that helps Canadian police officers become more productive while supporting mental health and raising
+                  PTSD awareness.
                 </p>
                 <Link
                   href="/founder-story"
@@ -90,7 +91,7 @@ export default function HomePage() {
             </div>
             <div>
               <p className="text-2xl font-semibold text-white">Download OPAi Today</p>
-              <p className="mt-1 text-sm text-white/64">Your AI assistant. Everywhere you go.</p>
+              <p className="mt-1 text-sm text-white/64">Operational Police Ai for Canadian police officers.</p>
             </div>
             <StoreButtons className="sm:justify-end" />
           </FadeIn>

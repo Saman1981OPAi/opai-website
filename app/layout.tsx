@@ -15,6 +15,9 @@ export const metadata: Metadata = {
   applicationName: "OPAi",
   keywords: [
     "OPAi",
+    "Operational Police Ai",
+    "Canadian police officers",
+    "Canadian police app",
     "PTSD awareness app",
     "public safety wellness",
     "police wellness app",
@@ -30,7 +33,7 @@ export const metadata: Metadata = {
     url: site.url,
     siteName: "OPAi",
     images: [{ url: "/images/opai-hero.png", width: 1536, height: 864, alt: "OPAi mobile app preview" }],
-    locale: "en_US",
+    locale: "en_CA",
     type: "website"
   },
   twitter: {
