@@ -7,21 +7,14 @@ import { StoreButtons } from "@/components/StoreButtons";
 
 function CanadianFlag() {
   return (
-    <span
-      className="grid h-8 w-12 shrink-0 grid-cols-[1fr_2fr_1fr] overflow-hidden rounded-[3px] border border-white/30 shadow-[0_0_18px_rgba(255,255,255,0.12)]"
-      aria-label="Canadian flag"
-      role="img"
-    >
-      <span className="bg-[#FF0000]" />
-      <span className="grid place-items-center bg-white">
-        <svg className="h-5 w-5 text-[#FF0000]" viewBox="0 0 64 64" aria-hidden="true">
-          <path
-            fill="currentColor"
-            d="M32 4 27.7 18.2 18 12.5l3.9 13.4-12.8-1.5 9.7 9.5-6.3 5.2 14.6 2.1L25.5 56h13l-1.6-14.8 14.6-2.1-6.3-5.2 9.7-9.5-12.8 1.5L46 12.5l-9.7 5.7L32 4Z"
-          />
-        </svg>
-      </span>
-      <span className="bg-[#FF0000]" />
+    <span className="relative h-8 w-14 shrink-0 overflow-hidden rounded-[3px] border border-white/30 shadow-[0_0_18px_rgba(10,132,255,0.18)]">
+      <Image
+        src="/images/canadian-thin-blue-line-flag.png"
+        alt="Canadian thin blue line flag"
+        fill
+        className="object-cover"
+        sizes="56px"
+      />
     </span>
   );
 }
