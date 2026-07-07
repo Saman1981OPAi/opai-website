@@ -9,20 +9,20 @@ export const metadata: Metadata = {
 
 const sections = [
   {
-    title: "Information we collect",
-    body: "OPAi may collect account information, contact information, app usage information, device information, and information you choose to provide through forms or support workflows."
+    title: "Current public website and app preview",
+    body: "The current OPAi public website and launch preview do not create user accounts, process payments, store incident data, upload documents, or transmit app activity to an OPAi backend."
   },
   {
-    title: "How we use information",
-    body: "Information is used to operate the service, improve product quality, provide support, communicate updates, protect the platform, and comply with applicable obligations."
+    title: "Contact by email",
+    body: "If you contact OPAi by email, we may use the information you provide to respond to your message, discuss launch updates, support partnerships, or answer product questions."
   },
   {
-    title: "Sensitive information",
-    body: "OPAi is designed with heightened care for wellness-related experiences. Production deployments should minimize sensitive data collection and clearly communicate consent choices."
+    title: "Future production services",
+    body: "Future versions of OPAi may include accounts, secure synchronization, notifications, AI interactions, incident workflows, document metadata, translations, and support features. Privacy practices will be updated before those services collect or process personal information."
   },
   {
     title: "Security",
-    body: "We use administrative, technical, and organizational safeguards appropriate to the nature of the service. No digital system can be guaranteed to be perfectly secure."
+    body: "OPAi is being designed with administrative, technical, and organizational safeguards appropriate for public safety workflows. No digital system can be guaranteed to be perfectly secure."
   },
   {
     title: "Contact",
@@ -36,7 +36,7 @@ export default function PrivacyPolicyPage() {
       <PageHero
         eyebrow="Privacy Policy"
         title="Privacy built around trust."
-        body="This policy is a production-ready starting point and should be reviewed by counsel before launch."
+        body="OPAi is being built with a careful privacy posture for Canadian police officers, public safety workflows, and future secure product services."
       />
       <section className="py-20">
         <Container className="max-w-4xl">

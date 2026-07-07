@@ -4,6 +4,7 @@ import { Container } from "@/components/Container";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { FadeIn } from "@/components/Motion";
+import { PlatformRoadmap } from "@/components/PlatformRoadmap";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StoreButtons } from "@/components/StoreButtons";
 import { featureCards } from "@/lib/site";
@@ -36,6 +37,8 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
+      <PlatformRoadmap />
 
       <section className="pb-16 pt-6">
         <Container>

@@ -1,12 +1,18 @@
-import { timeline } from "@/lib/site";
+import { founderTimeline } from "@/lib/site";
 import { FadeIn } from "@/components/Motion";
 
-export function Timeline() {
+type TimelineItem = {
+  date: string;
+  title: string;
+  body: string;
+};
+
+export function Timeline({ items = founderTimeline }: { items?: TimelineItem[] }) {
   return (
     <div className="relative">
       <div className="absolute left-4 top-2 h-[calc(100%-1rem)] w-px bg-gradient-to-b from-opai-blue via-ptsd-green to-transparent sm:left-1/2" />
       <div className="grid gap-8">
-        {timeline.map((item, index) => (
+        {items.map((item, index) => (
           <FadeIn
             key={item.title}
             delay={index * 0.06}

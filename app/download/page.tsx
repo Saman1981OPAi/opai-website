@@ -8,7 +8,7 @@ import { StoreButtons } from "@/components/StoreButtons";
 
 export const metadata: Metadata = {
   title: "Download",
-  description: "OPAi Police mobile apps for iOS and Android are coming soon."
+  description: "OPAi Police mobile apps for iOS and Android launch planning."
 };
 
 export default function DownloadPage() {
@@ -16,8 +16,8 @@ export default function DownloadPage() {
     <>
       <PageHero
         eyebrow="Download"
-        title="OPAi Police is coming soon to iOS and Android."
-        body="The mobile app will support law-enforcement productivity, shift readiness, translation, calendar reminders, court, training, AI assistance, and PTSD awareness."
+        title="OPAi Police is preparing for mobile launch."
+        body="The iOS app has been submitted for App Store review, with Android planned next. OPAi Police supports law-enforcement productivity, shift readiness, translation, calendar reminders, court, training, AI assistance, and PTSD awareness."
       />
       <section id="download" className="py-20">
         <Container>
@@ -25,8 +25,8 @@ export default function DownloadPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.22em] text-ptsd-green">Mobile apps</p>
             <h2 className="mt-4 text-3xl font-semibold text-white sm:text-5xl">Download when OPAi launches.</h2>
             <p className="mx-auto mt-5 max-w-2xl text-base leading-7 text-white/64">
-              App Store and Google Play destinations are prepared for launch. The buttons will point to the live mobile
-              apps once OPAi Police is approved and available.
+              App Store and Google Play destinations are prepared for launch. The buttons will point to live mobile app
+              listings once OPAi Police is approved and publicly available.
             </p>
             <StoreButtons className="mt-9 justify-center" />
             <div className="mt-8">

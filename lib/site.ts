@@ -5,6 +5,8 @@ import {
   Building2,
   CalendarDays,
   ClipboardCheck,
+  Code2,
+  Database,
   FileLock2,
   Files,
   Gavel,
@@ -16,8 +18,10 @@ import {
   MessageCircle,
   Phone,
   RadioTower,
+  Server,
   Siren,
   Sparkles,
+  Smartphone,
   Users
 } from "lucide-react";
 
@@ -125,6 +129,29 @@ export const awarenessCards = [
 
 export const timeline = [
   {
+    date: "Project 001",
+    title: "Official corporate website",
+    body: "The opaiapp.com website establishes the OPAi brand, explains OPAi Police, shares the founder story, supports PTSD awareness, and provides launch-ready app download destinations."
+  },
+  {
+    date: "Project 002",
+    title: "Reusable design system",
+    body: "A shared OPAi design language is being shaped for the website, iOS app, Android app, backend dashboards, and future desktop experiences."
+  },
+  {
+    date: "Project 003",
+    title: "Mobile app for iOS and Android",
+    body: "OPAi Police is designed as a cross-platform mobile app with officer readiness, incidents, AI assistance, translation, scheduling, resources, and secure workflow foundations."
+  },
+  {
+    date: "Projects 004-005",
+    title: "Secure API and database foundation",
+    body: "The platform roadmap includes a FastAPI backend and normalized PostgreSQL database for authentication, incidents, reports, AI conversations, reminders, evidence metadata, translations, and synchronization."
+  }
+];
+
+export const founderTimeline = [
+  {
     date: "Origin",
     title: "Built from lived police experience",
     body: "OPAi was created by a medically retired Canadian police officer and PTSD survivor who saw the need for better officer support."
@@ -143,6 +170,29 @@ export const timeline = [
     date: "Launch",
     title: "Website, design system, app MVP",
     body: "OPAi begins with the official website, then moves into the design system, mobile screens, and the future app architecture."
+  }
+];
+
+export const platformPillars = [
+  {
+    icon: Smartphone,
+    title: "Mobile application",
+    body: "A Canadian police officer app for shift readiness, incidents, AI assistance, translation, resources, calendar workflows, notes, files, and reminders."
+  },
+  {
+    icon: Code2,
+    title: "Design system",
+    body: "Reusable colors, typography, spacing, buttons, cards, navigation patterns, accessibility rules, and product standards across every OPAi surface."
+  },
+  {
+    icon: Server,
+    title: "Backend API",
+    body: "A secure service foundation planned for authentication, AI interactions, incidents, calendars, notifications, translation, document storage, and sync."
+  },
+  {
+    icon: Database,
+    title: "Database layer",
+    body: "A normalized PostgreSQL model for users, incidents, reports, AI conversations, reminders, evidence metadata, translations, settings, and audit history."
   }
 ];
 
