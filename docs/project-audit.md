@@ -58,7 +58,7 @@ Out of scope:
 
 Acceptance criteria:
 - All required pages exist.
-- App Store and Google Play buttons are marked Coming Soon or Testing.
+- App Store readiness is presented as the active launch path, while Google Play is marked paused or under construction until the D-U-N-S Number for Ebrahimi Holdings is received.
 - Required disclaimers are present.
 - Site passes lint, typecheck, and production build.
 - Mobile layout is readable with no overlapping content.
@@ -116,7 +116,7 @@ Deliverables:
 
 ### Project 003 - Mobile App
 
-Objective: Develop the cross-platform OPAi Police mobile app for iOS and Android.
+Objective: Develop the cross-platform OPAi Police mobile app with iOS as the active launch priority and Android kept compatible for later Google Play submission.
 
 Scope:
 - Shared codebase, Nori-inspired navigation, police-specific workflows, AI entry points, translation, scheduling, notes, and resources.
@@ -124,11 +124,13 @@ Scope:
 Out of scope:
 - Production backend integration until Projects 004-007 are ready.
 - App Store final release until review, privacy, screenshots, and compliance are complete.
+- Android-specific store assets, Google Play release workflows, and Android production deployment until the D-U-N-S Number for Ebrahimi Holdings is received.
 
 Acceptance criteria:
 - iPhone and iPad layouts are symmetrical, readable, and close to approved mockups.
 - Navigation supports core modules.
 - Screens use reusable design system components.
+- Android support and configuration remain intact without becoming the active launch platform.
 
 Testing requirements:
 - Device simulator checks.

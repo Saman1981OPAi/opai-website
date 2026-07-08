@@ -31,8 +31,8 @@ Build and prepare the official OPAi public website foundation for human review. 
 - Homepage sections:
   - Hero section
   - OPAi Police introduction
-  - App Store button marked Coming Soon
-  - Google Play button marked Coming Soon
+  - App Store button marked as the iOS priority path
+  - Google Play button marked paused or under construction until the D-U-N-S Number for Ebrahimi Holdings is received
   - Feature cards
   - PTSD awareness section
   - Founder story preview

@@ -39,7 +39,8 @@ Exit criteria:
 - Design tokens are documented.
 - Mobile navigation shell is stable.
 - iPhone and iPad layouts are visually reviewed.
-- Store screenshots can be produced from consistent UI.
+- iOS store screenshots can be produced from consistent UI.
+- Android compatibility remains intact, but Android store-release work is paused until the D-U-N-S Number for Ebrahimi Holdings is received.
 
 ### Milestone 3: Backend and Database Foundation
 
@@ -133,18 +134,20 @@ Exit criteria:
 - Security controls and audit logging are implemented.
 - Release checklist exists.
 
-### Milestone 8: App Store / Google Play Readiness
+### Milestone 8: App Store Readiness / Google Play Paused
 
 Projects:
 - Project 003 plus Projects 006-015 as required
 
 Why it comes last:
 - Store submission depends on product stability, privacy information, screenshots, disclaimers, test credentials, support URLs, and production infrastructure.
+- iOS App Store readiness is the active launch path.
+- Google Play readiness is paused until the D-U-N-S Number for Ebrahimi Holdings is received.
 
 Exit criteria:
-- Store metadata complete.
+- App Store metadata complete.
 - Privacy policy URL present.
-- Screenshots meet Apple and Google requirements.
+- Screenshots meet Apple requirements.
 - Build is tested.
 - Review notes are complete.
 - No user-facing copy implies unsupported claims.
@@ -155,7 +158,7 @@ Exit criteria:
 | --- | --- | --- |
 | 001 - Website | Brand requirements | Public launch, policies, store support URLs |
 | 002 - Design System | 001 | 003 and consistent future UI |
-| 003 - Mobile App | 001, 002 | 006-013 mobile surfaces and store readiness |
+| 003 - Mobile App | 001, 002 | 006-013 mobile surfaces, iOS store readiness, and future Android compatibility |
 | 004 - Backend API | 005, 014 architecture | 006-013 production behavior |
 | 005 - Database | 004 architecture, 014 policy | 004, 006-013 |
 | 006 - Authentication | 004, 005, 014 | 007-013 personalized workflows |
@@ -188,7 +191,7 @@ flowchart TD
   P012["012 Notifications"]
   P013["013 Police Knowledge Base"]
   P015["015 Deployment"]
-  Store["App Store and Google Play Readiness"]
+  Store["App Store Readiness / Google Play Paused"]
 
   P001 --> P002
   P001 --> P003
