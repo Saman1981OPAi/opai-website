@@ -112,7 +112,7 @@ export default function HomePage() {
               <Smartphone className="size-7 text-opai-blue-soft" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-2xl font-semibold text-white">Download OPAi Today</p>
+              <p className="text-2xl font-semibold text-white">OPAi Police is currently in testing.</p>
               <p className="mt-1 text-sm text-white/64">Operational Police Ai for Canadian police officers.</p>
             </div>
             <StoreButtons className="sm:justify-end" />

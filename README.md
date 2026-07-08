@@ -2,11 +2,17 @@
 
 Official corporate website for [opaiapp.com](https://opaiapp.com).
 
+Current status: Testing / Pre-launch
+
+OPAi, Operational Police Ai, is a public-facing brand and product website for OPAi Police, a productivity and AI assistance tool designed for Canadian police officers. The site introduces the product vision, supports PTSD awareness, provides founder context, and publishes pre-launch download destinations for iOS and Android.
+
 ## Project 001
 
-This website establishes the OPAi brand, introduces the flagship OPAi Police product, tells the founder story, promotes PTSD awareness, and provides App Store and Google Play coming-soon pathways.
+This repository implements Project 001 - Website from the OPAi Master Project Roadmap.
 
-## Stack
+The website establishes the OPAi brand foundation before later roadmap work begins on the design system, mobile app, backend, database, authentication, AI platform, police workflow modules, security, and deployment automation.
+
+## Tech Stack
 
 - Next.js 15
 - React 19
@@ -14,6 +20,8 @@ This website establishes the OPAi brand, introduces the flagship OPAi Police pro
 - Tailwind CSS
 - Framer Motion
 - Lucide icons
+- Static export support
+- Vercel-ready deployment
 
 ## Pages
 
@@ -27,23 +35,44 @@ This website establishes the OPAi brand, introduces the flagship OPAi Police pro
 - Privacy Policy
 - Terms of Service
 
-## Quality Targets
+## Product Positioning
 
-- Modern SaaS-grade visual design
-- Dark premium brand system
-- Responsive mobile-first layout
-- Accessible navigation and focus states
-- SEO metadata, sitemap, and robots support
-- Static prerendering for performance
+The website must use Testing / Pre-launch language until the app is publicly released.
 
-## Development
+Required public disclaimers:
+
+- OPAi Police is a productivity and AI assistance tool.
+- OPAi Police is not a replacement for official police systems, supervision, service policy, legal advice, medical advice, or professional judgment.
+- AI-generated responses may be incomplete or inaccurate and must be verified.
+- PTSD awareness content is educational only and is not medical treatment, diagnosis, therapy, or crisis intervention.
+
+## Brand and Content Rules
+
+- Use a black / dark navy foundation.
+- Use police blue accents.
+- Use light green for PTSD awareness.
+- Use Canadian maple leaf symbolism where appropriate.
+- Do not use official police service logos.
+- Do not use government badges or protected insignia.
+- Do not use RCMP, OPP, TPS, YRP, or other service-specific marks.
+- Do not use copyrighted third-party imagery unless properly licensed.
+- Do not add analytics, advertising, tracking, cookies, payments, or subscription logic unless explicitly approved.
+
+## Local Development
+
+Install dependencies:
 
 ```bash
 pnpm install
+```
+
+Start the local development server:
+
+```bash
 pnpm dev
 ```
 
-## Validation
+Run validation:
 
 ```bash
 pnpm lint
@@ -51,6 +80,37 @@ pnpm typecheck
 pnpm build
 ```
 
+## Environment Variables
+
+The website currently does not require runtime environment variables.
+
+Deployment workflows may require hosting secrets in GitHub or Vercel:
+
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+Use `.env.example` as a placeholder reference. Do not commit real secrets.
+
 ## Deployment
 
-The app is configured for static export and GitHub Pages deployment with the production domain `opaiapp.com`.
+The website is prepared for Vercel deployment through GitHub Actions with staging and production separation.
+
+Required deployment setup:
+
+1. Create or connect the Vercel project.
+2. Add the required Vercel secrets to GitHub.
+3. Run CI on pull requests.
+4. Deploy reviewed code to staging or production.
+
+See [docs/deployment.md](docs/deployment.md) for deployment details.
+
+## Sprint 001 Documentation
+
+- [Project audit](docs/project-audit.md)
+- [Dependency map](docs/dependency-map.md)
+- [Sprint 001 plan](docs/sprint-001-plan.md)
+
+## Review Notes
+
+Sprint 001 is limited to the public website foundation. Mobile app, backend, database, authentication, AI platform, police workflow modules, payment logic, analytics, and production user accounts are intentionally out of scope.
