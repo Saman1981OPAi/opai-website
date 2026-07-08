@@ -21,6 +21,27 @@ Sprint 001 should remain focused on Project 001 only: the public website and bra
 - Keep AI, legal, medical, and operational disclaimers visible in relevant surfaces.
 - Treat Canadian privacy, consent, and minimal data collection as core requirements.
 
+## Existing Repository Inspection
+
+Completed before this Sprint 001 stabilization pass:
+
+- Required app routes exist for Home, About, Features, OPAi Police, PTSD Awareness, Founder Story, Download, Contact, Privacy Policy, and Terms of Service.
+- Shared components exist for buttons, container layout, CTA blocks, feature cards, footer, header, hero, motion wrappers, page heroes, platform roadmap, section headers, store buttons, and timelines.
+- Global styling exists through Tailwind CSS and `app/globals.css`.
+- SEO support exists through metadata, `robots.ts`, and `sitemap.ts`.
+- Static export support exists through Next.js build output to `out`.
+- The current live deployment path is GitHub Pages from the `main` branch.
+- Current DNS for `opaiapp.com` points to GitHub Pages.
+
+Missing or corrected in this Sprint 001 setup:
+
+- Planning documents were added for project audit, dependency map, and Sprint 001 plan.
+- README was expanded for reviewer clarity.
+- A public disclaimer band was added so required AI, operational, legal, medical, and PTSD-awareness limitations are visible on the site.
+- Testing/pre-launch language was tightened.
+- Brand assets were added under `public/images/brand`.
+- Vercel migration was documented as a future step without removing the current live GitHub Pages deployment.
+
 ## Project Audit
 
 ### Project 001 - Website
@@ -30,7 +51,7 @@ Objective: Build the official OPAi corporate website for `opaiapp.com`.
 Scope:
 - Public brand website using Next.js, React, TypeScript, Tailwind CSS, and Framer Motion.
 - Pages for Home, Features, OPAi Police, PTSD Awareness, Founder Story, Download, Contact, Privacy Policy, and Terms of Service.
-- SEO, accessibility, responsive layout, dark theme, testing/pre-launch language, and Vercel-ready deployment.
+- SEO, accessibility, responsive layout, dark theme, testing/pre-launch language, current GitHub Pages deployment stability, and Vercel-ready planning.
 
 Out of scope:
 - Backend APIs, user accounts, payment logic, analytics, app functionality, or live police workflows.
@@ -60,7 +81,9 @@ Deliverables:
 - Website implementation, README, deployment docs, Sprint 001 plan, and review PR.
 
 Status:
-- Implemented locally and live foundation exists. Sprint 001 documentation and review PR are being prepared.
+- Existing website foundation is implemented and live.
+- Sprint 001 documentation and public disclaimer updates are prepared in a review PR.
+- Current GitHub Pages deployment is preserved. Vercel migration is planned but not activated.
 
 ### Project 002 - Design System
 

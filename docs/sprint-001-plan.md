@@ -6,7 +6,7 @@ Target product posture: Testing / pre-launch
 
 ## Sprint Objective
 
-Build and prepare the official OPAi public website foundation for human review. The website should establish the OPAi brand, introduce OPAi Police, communicate that the product is currently in testing, support PTSD awareness, provide contact and policy pages, and prepare the site for Vercel deployment.
+Build and prepare the official OPAi public website foundation for human review. The website should establish the OPAi brand, introduce OPAi Police, communicate that the product is currently in testing, support PTSD awareness, provide contact and policy pages, preserve the current live website, and document the future Vercel migration path.
 
 ## Sprint Scope
 
@@ -49,6 +49,7 @@ Build and prepare the official OPAi public website foundation for human review. 
 - Payment or subscription logic.
 - Analytics, advertising, tracking, or cookies.
 - Official police service logos, government badges, protected insignia, or unlicensed third-party images.
+- Replacing the current live GitHub Pages deployment before Vercel is connected and verified.
 
 ## Tasks
 
@@ -64,6 +65,7 @@ Build and prepare the official OPAi public website foundation for human review. 
 6. Add Sprint 001 plan.
 7. Update README for project overview, stack, local development, environment variables, Vercel deployment, and Testing / Pre-launch status.
 8. Prepare review PR titled `Sprint 001: OPAi Website Foundation`.
+9. Preserve current GitHub Pages deployment until Vercel and DNS are confirmed.
 
 ## Acceptance Criteria
 
@@ -80,6 +82,7 @@ Build and prepare the official OPAi public website foundation for human review. 
   - `docs/sprint-001-plan.md`
 - README is updated.
 - Review PR is created and not merged automatically.
+- Existing live deployment workflow is not removed during Sprint 001 review.
 
 ## Testing Checklist
 
@@ -103,6 +106,14 @@ Build and prepare the official OPAi public website foundation for human review. 
 
 ## Deployment Checklist
 
+Current live deployment:
+
+- [ ] Preserve GitHub Pages workflow while PR is under review.
+- [ ] Confirm `opaiapp.com` remains reachable.
+- [ ] Confirm production deployment uses reviewed code only.
+
+Future Vercel migration:
+
 - [ ] Confirm Vercel project exists.
 - [ ] Add GitHub secrets:
   - `VERCEL_TOKEN`
@@ -111,7 +122,7 @@ Build and prepare the official OPAi public website foundation for human review. 
 - [ ] Confirm production domain points to the intended hosting provider.
 - [ ] Confirm staging and production environments are separated.
 - [ ] Confirm CI runs lint, typecheck, and build before deployment.
-- [ ] Confirm production deployment uses reviewed code only.
+- [ ] Switch DNS only after Vercel verifies the required records.
 
 ## Definition of Done
 

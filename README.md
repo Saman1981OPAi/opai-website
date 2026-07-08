@@ -21,7 +21,8 @@ The website establishes the OPAi brand foundation before later roadmap work begi
 - Framer Motion
 - Lucide icons
 - Static export support
-- Vercel-ready deployment
+- Static export support for the current GitHub Pages deployment
+- Vercel-ready project structure for future migration
 
 ## Pages
 
@@ -84,7 +85,9 @@ pnpm build
 
 The website currently does not require runtime environment variables.
 
-Deployment workflows may require hosting secrets in GitHub or Vercel:
+The current website does not require deployment secrets for GitHub Pages.
+
+Future Vercel deployment may require hosting secrets in GitHub or Vercel:
 
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
@@ -94,14 +97,17 @@ Use `.env.example` as a placeholder reference. Do not commit real secrets.
 
 ## Deployment
 
-The website is prepared for Vercel deployment through GitHub Actions with staging and production separation.
+The live website currently deploys through GitHub Pages. Sprint 001 preserves that live deployment path so `opaiapp.com` remains stable during review.
 
-Required deployment setup:
+The repository is documented for a future Vercel migration, but Vercel deployment automation should not be activated until the Vercel project, required secrets, and DNS records are confirmed.
+
+Future Vercel setup:
 
 1. Create or connect the Vercel project.
 2. Add the required Vercel secrets to GitHub.
-3. Run CI on pull requests.
-4. Deploy reviewed code to staging or production.
+3. Add `opaiapp.com` and `www.opaiapp.com` to Vercel.
+4. Update DNS only after Vercel verifies the required records.
+5. Deploy reviewed code to staging or production.
 
 See [docs/deployment.md](docs/deployment.md) for deployment details.
 
