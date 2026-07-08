@@ -74,7 +74,7 @@ export function Hero() {
         <HeroMotion>
           <p className="mb-5 inline-flex items-center gap-3 rounded-full border border-opai-blue/40 bg-opai-blue/10 px-4 py-2 text-sm font-semibold text-opai-blue-soft">
             <CanadianFlag />
-            Built for Canadian police officers
+            Currently in testing for Canadian police officers
           </p>
           <h1 className="max-w-4xl text-6xl font-black tracking-normal text-white sm:text-7xl lg:text-8xl">
             OPA<span className="text-opai-blue">i</span>
