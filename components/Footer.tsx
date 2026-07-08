@@ -78,6 +78,9 @@ export function Footer() {
         </div>
       </Container>
       <Container className="mt-10 border-t border-white/10 pt-6">
+        <p className="mb-2 text-center text-sm font-semibold text-white/58">
+          Project Owner: 1001246299 ONTARIO INC.
+        </p>
         <p className="text-center text-sm text-white/42">Copyright 2026 OPAi. All rights reserved. Made in Canada.</p>
       </Container>
     </footer>
