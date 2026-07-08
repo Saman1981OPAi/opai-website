@@ -136,12 +136,12 @@ export const timeline = [
   {
     date: "Project 002",
     title: "Reusable design system",
-    body: "A shared OPAi design language is being shaped for the website, iOS app, Android app, backend dashboards, and future desktop experiences."
+    body: "A shared OPAi design language is being shaped for the website, iOS app, Android-compatible app foundation, backend dashboards, and future desktop experiences."
   },
   {
     date: "Project 003",
-    title: "Mobile app for iOS and Android",
-    body: "OPAi Police is designed as a cross-platform mobile app with officer readiness, incidents, AI assistance, translation, scheduling, resources, and secure workflow foundations."
+    title: "Mobile app, iOS first",
+    body: "OPAi Police is currently prioritizing iOS app development and App Store readiness. Android support remains under construction for later Google Play submission after the D-U-N-S Number for Ebrahimi Holdings is received."
   },
   {
     date: "Projects 004-005",
@@ -198,7 +198,7 @@ export const platformPillars = [
 
 export const stats = [
   { value: "24/7", label: "resource access" },
-  { value: "2", label: "mobile platforms" },
+  { value: "1", label: "active launch platform" },
   { value: "0", label: "clutter by design" }
 ];
 

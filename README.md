@@ -4,13 +4,27 @@ Official corporate website for [opaiapp.com](https://opaiapp.com).
 
 Current status: Testing / Pre-launch
 
-OPAi, Operational Police Ai, is a public-facing brand and product website for OPAi Police, a productivity and AI assistance tool designed for Canadian police officers. The site introduces the product vision, supports PTSD awareness, provides founder context, and publishes pre-launch download destinations for iOS and Android.
+OPAi, Operational Police Ai, is a public-facing brand and product website for OPAi Police, a productivity and AI assistance tool designed for Canadian police officers. The site introduces the product vision, supports PTSD awareness, provides founder context, and publishes pre-launch download guidance with iOS as the active launch priority.
 
 ## Project 001
 
 This repository implements Project 001 - Website from the OPAi Master Project Roadmap.
 
 The website establishes the OPAi brand foundation before later roadmap work begins on the design system, mobile app, backend, database, authentication, AI platform, police workflow modules, security, and deployment automation.
+
+## Current Platform Priority
+
+Android and Google Play submission are paused until the D-U-N-S Number for Ebrahimi Holdings is received.
+
+Current priority:
+
+1. iOS app development
+2. Website and public launch materials
+3. App Store readiness
+4. Shared design system and architecture
+5. Documentation and security planning
+
+Android support should remain under construction and cross-platform compatible, but Android-specific store assets, Google Play release workflows, and Android production deployment should not be prioritized until the D-U-N-S Number is received.
 
 ## Tech Stack
 
