@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { DisclaimerBand } from "@/components/DisclaimerBand";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
+import { VisitCounter } from "@/components/VisitCounter";
 import { site } from "@/lib/site";
 import "./globals.css";
 
@@ -62,6 +63,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       <body className="font-sans antialiased">
         <Header />
         <main id="main">{children}</main>
+        <VisitCounter />
         <DisclaimerBand />
         <Footer />
       </body>

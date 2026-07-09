@@ -47,6 +47,10 @@ Required public disclaimers:
 - AI-generated responses may be incomplete or inaccurate and must be verified.
 - PTSD awareness content is educational only and is not medical treatment, diagnosis, therapy, or crisis intervention.
 
+## Site Visit Counter
+
+The home page includes a visible visit counter starting from 100,000. It increments on page navigation, refreshes, back/forward visits, and manual repeat-count interaction in the same browser. This counter is privacy-safe for the static website: it uses local browser storage only and does not add analytics, cookies, IP tracking, advertising, third-party scripts, or a backend database.
+
 ## Brand and Content Rules
 
 - Use a black / dark navy foundation.
