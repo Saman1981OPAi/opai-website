@@ -3,13 +3,9 @@ import { CTA } from "@/components/CTA";
 import { Container } from "@/components/Container";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHero } from "@/components/PageHero";
-import { differentiators } from "@/lib/site";
+import { createPageMetadata, differentiators } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "About",
-  description:
-    "Learn about OPAi, Operational Police Ai, the law-enforcement AI assistant supporting productivity, officer readiness, and PTSD awareness."
-};
+export const metadata: Metadata = createPageMetadata("/about/");
 
 export default function AboutPage() {
   return (

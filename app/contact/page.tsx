@@ -3,12 +3,9 @@ import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHero } from "@/components/PageHero";
-import { contactOptions, site } from "@/lib/site";
+import { contactOptions, createPageMetadata, site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Contact",
-  description: "Contact OPAi for partnerships, launch updates, media, and product questions."
-};
+export const metadata: Metadata = createPageMetadata("/contact/");
 
 export default function ContactPage() {
   return (

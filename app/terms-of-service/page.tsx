@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Terms of Service",
-  description: "OPAi terms of service."
-};
+export const metadata: Metadata = createPageMetadata("/terms-of-service/");
 
 const sections = [
   {

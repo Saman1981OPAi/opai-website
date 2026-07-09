@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, Ribbon, ShieldCheck, Smartphone, UserRound } from "lucide-react";
 import { Container } from "@/components/Container";
@@ -7,7 +8,9 @@ import { FadeIn } from "@/components/Motion";
 import { PlatformRoadmap } from "@/components/PlatformRoadmap";
 import { SectionHeader } from "@/components/SectionHeader";
 import { StoreButtons } from "@/components/StoreButtons";
-import { featureCards } from "@/lib/site";
+import { createPageMetadata, featureCards } from "@/lib/site";
+
+export const metadata: Metadata = createPageMetadata("/");
 
 const whyItems = [
   "Increase productivity and save time on duty",
@@ -59,7 +62,7 @@ export default function HomePage() {
                   PTSD awareness.
                 </p>
                 <Link
-                  href="/founder-story"
+                  href="/founder-story/"
                   className="focus-ring mt-6 inline-flex min-h-10 items-center rounded-[8px] border border-opai-blue/60 px-4 text-sm font-semibold text-opai-blue-soft hover:bg-opai-blue/10"
                 >
                   Read my story

@@ -11,7 +11,7 @@ function StoreButton({
 }) {
   return (
     <a
-      href="#download"
+      href="/download/#download"
       aria-label={`${label} coming soon`}
       className="focus-ring group inline-flex min-h-16 min-w-60 items-center gap-4 rounded-[8px] border border-white/15 bg-white/[0.07] px-5 py-3 transition hover:border-opai-blue-soft/70 hover:bg-white/[0.11]"
     >

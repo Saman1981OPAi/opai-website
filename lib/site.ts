@@ -24,6 +24,7 @@ import {
   Smartphone,
   Users
 } from "lucide-react";
+import type { Metadata } from "next";
 
 export const site = {
   name: "OPAi",
@@ -34,13 +35,183 @@ export const site = {
   email: "Admin@opaiapp.com"
 };
 
+export const seoKeywords = [
+  "OPAi",
+  "OPAi Police",
+  "Canadian police AI",
+  "AI assistant for law enforcement",
+  "police productivity app",
+  "PTSD awareness",
+  "Canadian policing technology",
+  "Operational Police Ai",
+  "Canadian police officers",
+  "law enforcement AI assistant",
+  "police wellness app"
+];
+
+export const seoPages = [
+  {
+    path: "/",
+    title: site.title,
+    description: site.description,
+    priority: 1,
+    changeFrequency: "weekly" as const
+  },
+  {
+    path: "/about/",
+    title: "About OPAi and Operational Police Ai",
+    description:
+      "Learn about OPAi, Operational Police Ai, the Canadian police AI platform supporting officer productivity, readiness, and PTSD awareness.",
+    priority: 0.8,
+    changeFrequency: "monthly" as const
+  },
+  {
+    path: "/features/",
+    title: "OPAi Police Features",
+    description:
+      "Explore OPAi Police features for shift readiness, incident workflows, translation, court, training, calendar reminders, AI assistance, and PTSD awareness.",
+    priority: 0.9,
+    changeFrequency: "monthly" as const
+  },
+  {
+    path: "/opai-police/",
+    title: "OPAi Police Canadian AI Assistant",
+    description:
+      "OPAi Police is a Canadian police AI assistant and productivity app for officer readiness, incidents, translation, court, training, reminders, and PTSD awareness.",
+    priority: 0.95,
+    changeFrequency: "monthly" as const
+  },
+  {
+    path: "/ptsd-awareness/",
+    title: "PTSD Awareness and OPAi Police Wellness Support",
+    description:
+      "Learn how OPAi supports PTSD awareness with calm education, wellness-oriented design, stigma reduction, and resource access for public safety communities.",
+    priority: 0.8,
+    changeFrequency: "monthly" as const
+  },
+  {
+    path: "/founder-story/",
+    title: "Founder Story",
+    description:
+      "Read the founder story behind OPAi, created from Canadian policing experience to support officers with productivity tools and PTSD awareness.",
+    priority: 0.75,
+    changeFrequency: "monthly" as const
+  },
+  {
+    path: "/download/",
+    title: "Download OPAi Police",
+    description:
+      "OPAi Police is now in testing for iOS, with Android compatibility under construction. Request launch updates for the Canadian police productivity app.",
+    priority: 0.8,
+    changeFrequency: "weekly" as const
+  },
+  {
+    path: "/contact/",
+    title: "Contact OPAi",
+    description:
+      "Contact OPAi for partnerships, App Store readiness, launch updates, media, product questions, and Canadian policing technology inquiries.",
+    priority: 0.7,
+    changeFrequency: "monthly" as const
+  },
+  {
+    path: "/privacy-policy/",
+    title: "Privacy Policy",
+    description:
+      "Review the OPAi privacy policy for the public website, app preview, future secure services, contact information, and privacy-by-design commitments.",
+    priority: 0.5,
+    changeFrequency: "yearly" as const
+  },
+  {
+    path: "/terms-of-service/",
+    title: "Terms of Service",
+    description:
+      "Review the OPAi terms of service for website and app preview use, limitations, intellectual property, and future product access.",
+    priority: 0.5,
+    changeFrequency: "yearly" as const
+  }
+];
+
+export function canonicalUrl(path = "/") {
+  return `${site.url}${path === "/" ? "/" : path}`;
+}
+
+export function getSeoPage(path: string) {
+  return seoPages.find((page) => page.path === path) ?? seoPages[0];
+}
+
+export function createPageMetadata(path: string): Metadata {
+  const page = getSeoPage(path);
+  const url = canonicalUrl(page.path);
+
+  return {
+    title: page.path === "/" ? { absolute: page.title } : page.title,
+    description: page.description,
+    keywords: seoKeywords,
+    alternates: {
+      canonical: url
+    },
+    openGraph: {
+      title: page.title,
+      description: page.description,
+      url,
+      siteName: "OPAi",
+      images: [{ url: "/images/opai-hero.png", width: 1536, height: 864, alt: "OPAi Police mobile app preview" }],
+      locale: "en_CA",
+      type: "website"
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: page.title,
+      description: page.description,
+      images: ["/images/opai-hero.png"]
+    },
+    robots: {
+      index: true,
+      follow: true
+    }
+  };
+}
+
+export const organizationStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "OPAi",
+  legalName: "1001246299 ONTARIO INC.",
+  url: site.url,
+  email: site.email,
+  logo: `${site.url}/images/brand/opai-police-ptsd-emblem.png`,
+  sameAs: [site.url]
+};
+
+export const softwareStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "OPAi Police",
+  applicationCategory: "ProductivityApplication",
+  operatingSystem: "iOS, Android",
+  description:
+    "OPAi Police is a Canadian police productivity app and AI assistant for law enforcement workflows, currently in testing.",
+  url: site.url,
+  offers: {
+    "@type": "Offer",
+    availability: "https://schema.org/PreOrder",
+    price: "0",
+    priceCurrency: "CAD"
+  },
+  publisher: {
+    "@type": "Organization",
+    name: "OPAi"
+  }
+};
+
 export const navItems = [
   { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Features", href: "/features" },
-  { label: "PTSD Awareness", href: "/ptsd-awareness" },
-  { label: "Founder", href: "/founder-story" },
-  { label: "Contact", href: "/contact" }
+  { label: "About", href: "/about/" },
+  { label: "Features", href: "/features/" },
+  { label: "OPAi Police", href: "/opai-police/" },
+  { label: "PTSD Awareness", href: "/ptsd-awareness/" },
+  { label: "Founder", href: "/founder-story/" },
+  { label: "Contact", href: "/contact/" }
 ];
 
 export const featureCards = [

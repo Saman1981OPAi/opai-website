@@ -1,11 +1,9 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description: "OPAi privacy policy."
-};
+export const metadata: Metadata = createPageMetadata("/privacy-policy/");
 
 const sections = [
   {

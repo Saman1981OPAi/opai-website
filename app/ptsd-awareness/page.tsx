@@ -5,12 +5,9 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { FadeIn } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { awarenessCards } from "@/lib/site";
+import { awarenessCards, createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "PTSD Awareness",
-  description: "Learn how OPAi supports PTSD awareness with calm education, resource access, and stigma-reducing design."
-};
+export const metadata: Metadata = createPageMetadata("/ptsd-awareness/");
 
 const principles = [
   "Use calm, plain language.",

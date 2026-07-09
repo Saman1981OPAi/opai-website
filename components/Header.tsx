@@ -11,6 +11,7 @@ import { Container } from "@/components/Container";
 export function Header() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const normalizedPathname = pathname === "/" ? "/" : `${pathname.replace(/\/$/, "")}/`;
 
   return (
     <header className="sticky top-0 z-50 border-b border-opai-blue/20 bg-[#03050A]/88 backdrop-blur-xl">
@@ -35,7 +36,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
           {navItems.map((item) => {
-            const active = pathname === item.href;
+            const active = normalizedPathname === item.href;
             return (
               <Link
                 key={item.href}
@@ -58,7 +59,7 @@ export function Header() {
               <span className="text-ptsd-green/80">Every download helps break the stigma</span>
             </p>
           </div>
-          <ButtonLink href="/download" className="min-h-11 px-5">
+          <ButtonLink href="/download/" className="min-h-11 px-5">
             Download
           </ButtonLink>
         </div>

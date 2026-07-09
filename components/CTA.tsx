@@ -17,7 +17,7 @@ export function CTA() {
                 organizational deployment, and future secure platform integrations.
               </p>
             </div>
-            <ButtonLink href="/contact" className="lg:justify-self-end">
+            <ButtonLink href="/contact/" className="lg:justify-self-end">
               Contact OPAi
               <ArrowRight className="ml-2 size-4" aria-hidden="true" />
             </ButtonLink>

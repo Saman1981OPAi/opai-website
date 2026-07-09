@@ -5,11 +5,9 @@ import { Container } from "@/components/Container";
 import { FadeIn } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { StoreButtons } from "@/components/StoreButtons";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Download",
-  description: "OPAi Police mobile apps for iOS and Android launch planning."
-};
+export const metadata: Metadata = createPageMetadata("/download/");
 
 export default function DownloadPage() {
   return (
@@ -30,7 +28,7 @@ export default function DownloadPage() {
             </p>
             <StoreButtons className="mt-9 justify-center" />
             <div className="mt-8">
-              <ButtonLink href="/contact" variant="secondary">
+              <ButtonLink href="/contact/" variant="secondary">
                 Request launch updates
                 <ArrowRight className="ml-2 size-4" aria-hidden="true" />
               </ButtonLink>

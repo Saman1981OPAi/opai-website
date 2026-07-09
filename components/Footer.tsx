@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Facebook, Instagram, Mail, Ribbon } from "lucide-react";
+import { Mail, Ribbon } from "lucide-react";
 import { Container } from "@/components/Container";
 import { navItems, site } from "@/lib/site";
 
@@ -37,13 +37,13 @@ export function Footer() {
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/48">Company</h2>
           <div className="mt-5 grid gap-3">
-            <Link href="/download" className="focus-ring rounded text-sm text-white/68 hover:text-white">
+            <Link href="/download/" className="focus-ring rounded text-sm text-white/68 hover:text-white">
               Download
             </Link>
-            <Link href="/privacy-policy" className="focus-ring rounded text-sm text-white/68 hover:text-white">
+            <Link href="/privacy-policy/" className="focus-ring rounded text-sm text-white/68 hover:text-white">
               Privacy Policy
             </Link>
-            <Link href="/terms-of-service" className="focus-ring rounded text-sm text-white/68 hover:text-white">
+            <Link href="/terms-of-service/" className="focus-ring rounded text-sm text-white/68 hover:text-white">
               Terms of Service
             </Link>
             <a href={`mailto:${site.email}`} className="focus-ring rounded text-sm text-white/68 hover:text-white">
@@ -56,16 +56,13 @@ export function Footer() {
           <div>
             <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/48">Connect</h2>
             <div className="mt-5 flex gap-3">
-              {[Facebook, Instagram, Mail].map((Icon, index) => (
-                <a
-                  key={index}
-                  href={index === 2 ? `mailto:${site.email}` : "#"}
-                  aria-label={index === 0 ? "Facebook" : index === 1 ? "Instagram" : "Email"}
-                  className="focus-ring grid size-10 place-items-center rounded-[8px] border border-opai-blue/30 bg-opai-blue/10 text-opai-blue-soft hover:bg-opai-blue/20"
-                >
-                  <Icon className="size-5" aria-hidden="true" />
-                </a>
-              ))}
+              <a
+                href={`mailto:${site.email}`}
+                aria-label="Email OPAi"
+                className="focus-ring grid size-10 place-items-center rounded-[8px] border border-opai-blue/30 bg-opai-blue/10 text-opai-blue-soft hover:bg-opai-blue/20"
+              >
+                <Mail className="size-5" aria-hidden="true" />
+              </a>
             </div>
           </div>
           <div className="flex gap-3">
