@@ -11,7 +11,7 @@ export function PlatformRoadmap() {
         <SectionHeader
           eyebrow="Platform foundation"
           title="One connected product system for OPAi."
-          body="Project 001 through Project 005 create the foundation for a complete OPAi ecosystem: the public website, shared design system, mobile app, secure backend, and scalable database."
+          body="Project 001 through Project 012 now define the public website, shared design system, mobile app shell, authentication foundation, AI safety workflow, shift readiness, incidents, translation, calendar, and notification planning."
           align="center"
         />
         <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -22,8 +22,8 @@ export function PlatformRoadmap() {
         <div className="mt-16">
           <SectionHeader
             eyebrow="Roadmap"
-            title="Built in layers, from brand to secure infrastructure."
-            body="The public site introduces the mission, while the product architecture grows into the mobile, backend, and data systems needed for secure operational workflows."
+            title="Built in layers, from brand to officer workflows."
+            body="OPAi is being developed step by step so each release can be reviewed, tested, and improved before production systems are connected."
             align="center"
           />
           <div className="mt-14">
