@@ -5,13 +5,9 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { FadeIn } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { policeFeatures } from "@/lib/site";
+import { createPageMetadata, policeFeatures } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "OPAi Police",
-  description:
-    "OPAi Police is an AI assistant for law enforcement, supporting officer readiness, incident organization, translation, calendar management, court reminders, training reminders, and PTSD awareness."
-};
+export const metadata: Metadata = createPageMetadata("/opai-police/");
 
 export default function OpaiPolicePage() {
   return (

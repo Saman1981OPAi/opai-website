@@ -4,12 +4,9 @@ import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
 import { Timeline } from "@/components/Timeline";
+import { createPageMetadata } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Founder Story",
-  description:
-    "The founder story behind OPAi, created by a medically retired Canadian police officer and PTSD survivor to help officers stay organized, productive, and prepared."
-};
+export const metadata: Metadata = createPageMetadata("/founder-story/");
 
 export default function FounderStoryPage() {
   return (

@@ -5,13 +5,9 @@ import { FeatureCard } from "@/components/FeatureCard";
 import { FadeIn } from "@/components/Motion";
 import { PageHero } from "@/components/PageHero";
 import { SectionHeader } from "@/components/SectionHeader";
-import { featureCards } from "@/lib/site";
+import { createPageMetadata, featureCards } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "Features",
-  description:
-    "Explore OPAi Police features for shift readiness, incidents, translation, calendar, court, training, AI assistance, notes, files, and notifications."
-};
+export const metadata: Metadata = createPageMetadata("/features/");
 
 const workflow = [
   "Start a shift with quick reminders instead of a forced checklist.",

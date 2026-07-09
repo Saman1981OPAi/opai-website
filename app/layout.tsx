@@ -4,7 +4,14 @@ import { DisclaimerBand } from "@/components/DisclaimerBand";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { VisitCounter } from "@/components/VisitCounter";
-import { site } from "@/lib/site";
+import {
+  canonicalUrl,
+  organizationStructuredData,
+  seoKeywords,
+  site,
+  softwareStructuredData,
+  websiteStructuredData
+} from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -15,34 +22,17 @@ export const metadata: Metadata = {
   },
   description: site.description,
   applicationName: "OPAi",
-  keywords: [
-    "OPAi",
-    "Operational Police Ai",
-    "OPAi Police",
-    "Canadian police AI",
-    "AI assistant for law enforcement",
-    "police productivity app",
-    "Canadian police officers",
-    "Canadian police app",
-    "shift readiness",
-    "incident workflow",
-    "police translation app",
-    "court reminders",
-    "training requalification",
-    "police notifications",
-    "PTSD awareness app",
-    "public safety wellness",
-    "police wellness app",
-    "mental health resources",
-    "community safety"
-  ],
+  keywords: seoKeywords,
   authors: [{ name: "OPAi" }],
   creator: "OPAi",
   publisher: "OPAi",
+  alternates: {
+    canonical: canonicalUrl("/")
+  },
   openGraph: {
     title: site.title,
     description: site.description,
-    url: site.url,
+    url: canonicalUrl("/"),
     siteName: "OPAi",
     images: [{ url: "/images/opai-hero.png", width: 1536, height: 864, alt: "OPAi mobile app preview" }],
     locale: "en_CA",
@@ -56,7 +46,14 @@ export const metadata: Metadata = {
   },
   robots: {
     index: true,
-    follow: true
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1
+    }
   }
 };
 
@@ -68,9 +65,15 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
+  const structuredData = [organizationStructuredData, softwareStructuredData, websiteStructuredData];
+
   return (
     <html lang="en">
       <body className="font-sans antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <Header />
         <main id="main">{children}</main>
         <VisitCounter />

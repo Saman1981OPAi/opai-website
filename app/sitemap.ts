@@ -1,16 +1,13 @@
 import type { MetadataRoute } from "next";
-import { navItems, site } from "@/lib/site";
+import { canonicalUrl, seoPages } from "@/lib/site";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const secondary = ["/opai-police", "/download", "/privacy-policy", "/terms-of-service"];
-  const paths = Array.from(new Set([...navItems.map((item) => item.href), ...secondary]));
-
-  return paths.map((path) => ({
-    url: `${site.url}${path}`,
+  return seoPages.map((page) => ({
+    url: canonicalUrl(page.path),
     lastModified: new Date(),
-    changeFrequency: path === "/" ? "weekly" : "monthly",
-    priority: path === "/" ? 1 : 0.7
+    changeFrequency: page.changeFrequency,
+    priority: page.priority
   }));
 }

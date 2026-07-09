@@ -115,6 +115,10 @@ Future Vercel setup:
 
 See [docs/deployment.md](docs/deployment.md) for deployment details.
 
+## SEO and Google Indexing
+
+See [docs/seo-readiness.md](docs/seo-readiness.md) for robots, sitemap, metadata, canonical URL, structured data, and Google Search Console readiness notes.
+
 ## Sprint 001 Documentation
 
 - [Project audit](docs/project-audit.md)

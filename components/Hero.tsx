@@ -102,10 +102,10 @@ export function Hero() {
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/founder-story" variant="secondary" className="min-h-11 px-5">
+            <ButtonLink href="/founder-story/" variant="secondary" className="min-h-11 px-5">
               Read my story
             </ButtonLink>
-            <ButtonLink href="/opai-police" variant="secondary" className="min-h-11 px-5">
+            <ButtonLink href="/opai-police/" variant="secondary" className="min-h-11 px-5">
               OPAi Police
             </ButtonLink>
           </div>
