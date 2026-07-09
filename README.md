@@ -55,7 +55,7 @@ The home page includes a visible visit counter starting from 100,000. It increme
 
 - Use a black / dark navy foundation.
 - Use police blue accents.
-- Use light green for PTSD awareness.
+- Use aquamarine `#7FFFD4` for PTSD awareness accents.
 - Use Canadian maple leaf symbolism where appropriate.
 - Do not use official police service logos.
 - Do not use government badges or protected insignia.

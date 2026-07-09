@@ -12,7 +12,7 @@ const config: Config = {
         surface: "#05070B",
         "opai-blue": "#0A84FF",
         "opai-blue-soft": "#4DA3FF",
-        "ptsd-green": "#6EDB8F",
+        "ptsd-green": "#7FFFD4",
         ink: "#FFFFFF"
       },
       fontFamily: {
@@ -20,11 +20,11 @@ const config: Config = {
       },
       boxShadow: {
         glow: "0 0 48px rgba(10, 132, 255, 0.24)",
-        "green-glow": "0 0 48px rgba(110, 219, 143, 0.18)"
+        "green-glow": "0 0 48px rgba(127, 255, 212, 0.18)"
       },
       backgroundImage: {
         "mesh-dark":
-          "radial-gradient(circle at 18% 18%, rgba(10,132,255,0.18), transparent 30%), radial-gradient(circle at 74% 14%, rgba(110,219,143,0.12), transparent 28%), linear-gradient(180deg, #05070B 0%, #07101A 52%, #05070B 100%)"
+          "radial-gradient(circle at 18% 18%, rgba(10,132,255,0.18), transparent 30%), radial-gradient(circle at 74% 14%, rgba(127,255,212,0.12), transparent 28%), linear-gradient(180deg, #05070B 0%, #07101A 52%, #05070B 100%)"
       }
     }
   },

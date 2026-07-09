@@ -55,7 +55,7 @@ const heroFeatures = [
 export function Hero() {
   return (
     <section className="relative overflow-hidden bg-[#03050A]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(10,132,255,0.22),transparent_28%),radial-gradient(circle_at_78%_14%,rgba(110,219,143,0.12),transparent_24%),linear-gradient(180deg,#03050A_0%,#06101E_55%,#03050A_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(10,132,255,0.22),transparent_28%),radial-gradient(circle_at_78%_14%,rgba(127,255,212,0.12),transparent_24%),linear-gradient(180deg,#03050A_0%,#06101E_55%,#03050A_100%)]" />
       <div className="fine-grid absolute inset-0 opacity-50" aria-hidden="true" />
       <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-44 opacity-40" aria-hidden="true">
         <div className="absolute bottom-0 left-0 h-16 w-full bg-[linear-gradient(90deg,transparent_0_4%,rgba(10,132,255,.22)_4%_4.4%,transparent_4.4%_9%,rgba(10,132,255,.18)_9%_9.5%,transparent_9.5%_14%)] bg-[length:90px_100%]" />
