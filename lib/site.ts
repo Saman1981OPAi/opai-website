@@ -45,8 +45,19 @@ export const seoKeywords = [
   "Canadian policing technology",
   "Operational Police Ai",
   "Canadian police officers",
+  "Canadian police app",
+  "shift readiness",
+  "incident workflow",
+  "police translation app",
+  "court reminders",
+  "training requalification",
+  "police notifications",
   "law enforcement AI assistant",
-  "police wellness app"
+  "PTSD awareness app",
+  "public safety wellness",
+  "police wellness app",
+  "mental health resources",
+  "community safety"
 ];
 
 export const seoPages = [
@@ -204,6 +215,19 @@ export const softwareStructuredData = {
   }
 };
 
+export const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: site.name,
+  url: site.url,
+  description: site.description,
+  inLanguage: "en-CA",
+  publisher: {
+    "@type": "Organization",
+    name: "OPAi"
+  }
+};
+
 export const navItems = [
   { label: "Home", href: "/" },
   { label: "About", href: "/about/" },
@@ -302,22 +326,62 @@ export const timeline = [
   {
     date: "Project 001",
     title: "Official corporate website",
-    body: "The opaiapp.com website establishes the OPAi brand, explains OPAi Police, shares the founder story, supports PTSD awareness, and provides launch-ready app download destinations."
+    body: "opaiapp.com introduces the OPAi brand, OPAi Police, founder story, PTSD awareness, download links, legal pages, SEO readiness, and public launch material."
   },
   {
     date: "Project 002",
     title: "Reusable design system",
-    body: "A shared OPAi design language is being shaped for the website, iOS app, Android app, backend dashboards, and future desktop experiences."
+    body: "Shared colors, typography, cards, buttons, navigation, accessibility rules, PTSD accent styling, and maple leaf/shield branding guide every product surface."
   },
   {
     date: "Project 003",
-    title: "Mobile app for iOS and Android",
-    body: "OPAi Police is designed as a cross-platform mobile app with officer readiness, incidents, AI assistance, translation, scheduling, resources, and secure workflow foundations."
+    title: "Mobile app foundation",
+    body: "The mobile app shell is in testing with clickable local prototype screens for Home, Start My Shift, New Incident, AI Assistant, Translation, Calendar, Court, Training, Notes, and Settings."
   },
   {
-    date: "Projects 004-005",
-    title: "Secure API and database foundation",
-    body: "The platform roadmap includes a FastAPI backend and normalized PostgreSQL database for authentication, incidents, reports, AI conversations, reminders, evidence metadata, translations, and synchronization."
+    date: "Project 004",
+    title: "Backend API planning",
+    body: "A secure FastAPI contract is planned for authentication, AI interactions, incidents, calendars, notifications, translation, document storage, and future synchronization."
+  },
+  {
+    date: "Project 005",
+    title: "Database planning",
+    body: "A normalized PostgreSQL model is planned for users, incidents, reports, conversations, reminders, evidence metadata, translations, settings, and audit history."
+  },
+  {
+    date: "Project 006",
+    title: "Authentication foundation",
+    body: "Mock authentication screens and consent flow are in place for sign in, account creation, password reset, verification, biometrics placeholder, terms, privacy, and disclaimers."
+  },
+  {
+    date: "Project 007",
+    title: "AI platform safety layer",
+    body: "The OPAi Assistant is currently local/mock only with categories, prompt chips, safety notices, local history controls, and no live OpenAI or backend connection yet."
+  },
+  {
+    date: "Project 008",
+    title: "Start My Shift",
+    body: "Non-mandatory readiness reminders support cruiser, equipment, CEW, firearm, radio, court, training, follow-up, and qualification awareness."
+  },
+  {
+    date: "Project 009",
+    title: "New Incident workflow",
+    body: "The prototype organizes incident type, time, location, people, witnesses, notes, attachments, evidence references, summaries, and follow-up placeholders."
+  },
+  {
+    date: "Project 010",
+    title: "Translation workflow",
+    body: "Text, voice, conversation, camera/OCR, document, police-context translation, preferences, history, and safety disclaimers are represented as local prototype flows."
+  },
+  {
+    date: "Project 011",
+    title: "Calendar workflow",
+    body: "Court appearances, meetings, training, annual qualifications, follow-ups, shift reminders, and requalification dates are planned with explicit sync consent."
+  },
+  {
+    date: "Project 012",
+    title: "Notifications workflow",
+    body: "Local notification planning covers standard reminders, persistent reminders, and optional high-priority alert patterns for court, training, qualifications, and follow-ups."
   }
 ];
 

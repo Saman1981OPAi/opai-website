@@ -3,7 +3,15 @@ import type { ReactNode } from "react";
 import { DisclaimerBand } from "@/components/DisclaimerBand";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { canonicalUrl, organizationStructuredData, seoKeywords, site, softwareStructuredData } from "@/lib/site";
+import { VisitCounter } from "@/components/VisitCounter";
+import {
+  canonicalUrl,
+  organizationStructuredData,
+  seoKeywords,
+  site,
+  softwareStructuredData,
+  websiteStructuredData
+} from "@/lib/site";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -57,7 +65,7 @@ export const viewport: Viewport = {
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
-  const structuredData = [organizationStructuredData, softwareStructuredData];
+  const structuredData = [organizationStructuredData, softwareStructuredData, websiteStructuredData];
 
   return (
     <html lang="en">
@@ -68,6 +76,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <Header />
         <main id="main">{children}</main>
+        <VisitCounter />
         <DisclaimerBand />
         <Footer />
       </body>
