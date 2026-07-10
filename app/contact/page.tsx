@@ -3,7 +3,7 @@ import { ContactForm } from "@/components/ContactForm";
 import { Container } from "@/components/Container";
 import { FeatureCard } from "@/components/FeatureCard";
 import { PageHero } from "@/components/PageHero";
-import { contactOptions, createPageMetadata, site } from "@/lib/site";
+import { contactOptions, createPageMetadata, externalLinks, site } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata("/contact/");
 
@@ -28,6 +28,23 @@ export default function ContactPage() {
               <p className="mt-5 text-sm text-white/52">
                 Prefer email? Contact <a className="text-opai-blue-soft hover:text-white" href={`mailto:${site.email}`}>{site.email}</a>.
               </p>
+              <div className="mt-6 rounded-[16px] border border-opai-blue/20 bg-white/[0.04] p-5">
+                <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/48">Official OPAi channels</h2>
+                <div className="mt-4 grid gap-3 text-sm">
+                  <a className="text-opai-blue-soft hover:text-white" href={externalLinks.whatsappChannel} rel="noopener noreferrer" target="_blank">
+                    WhatsApp Channel
+                  </a>
+                  <a className="text-opai-blue-soft hover:text-white" href={externalLinks.instagram} rel="noopener noreferrer" target="_blank">
+                    Instagram @opaiapp
+                  </a>
+                  <a className="text-opai-blue-soft hover:text-white" href={externalLinks.facebook} rel="noopener noreferrer" target="_blank">
+                    Facebook
+                  </a>
+                </div>
+                <p className="mt-4 text-sm leading-6 text-white/52">
+                  These links open outside the website. OPAi does not add tracking parameters to these public channel links.
+                </p>
+              </div>
             </div>
           </div>
         </Container>
