@@ -35,6 +35,12 @@ export const site = {
   email: "Admin@opaiapp.com"
 };
 
+export const externalLinks = {
+  facebook: "https://www.facebook.com/profile.php?id=61591569999710",
+  instagram: "https://www.instagram.com/opaiapp/",
+  whatsappChannel: "https://whatsapp.com/channel/0029Vb8HFSMEQIaoXOL6YO1a"
+} as const;
+
 export const seoKeywords = [
   "OPAi",
   "OPAi Police",
@@ -191,7 +197,7 @@ export const organizationStructuredData = {
   url: site.url,
   email: site.email,
   logo: `${site.url}/images/brand/opai-police-ptsd-emblem.png`,
-  sameAs: [site.url]
+  sameAs: [site.url, externalLinks.instagram, externalLinks.facebook, externalLinks.whatsappChannel]
 };
 
 export const softwareStructuredData = {

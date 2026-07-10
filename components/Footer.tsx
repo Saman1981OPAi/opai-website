@@ -1,7 +1,7 @@
 import Link from "next/link";
-import { Mail, Ribbon } from "lucide-react";
+import { Facebook, Instagram, Mail, MessageCircle, Ribbon } from "lucide-react";
 import { Container } from "@/components/Container";
-import { navItems, site } from "@/lib/site";
+import { externalLinks, navItems, site } from "@/lib/site";
 
 export function Footer() {
   return (
@@ -62,6 +62,33 @@ export function Footer() {
                 className="focus-ring grid size-10 place-items-center rounded-[8px] border border-opai-blue/30 bg-opai-blue/10 text-opai-blue-soft hover:bg-opai-blue/20"
               >
                 <Mail className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href={externalLinks.whatsappChannel}
+                aria-label="Open the official OPAi WhatsApp Channel"
+                className="focus-ring grid size-10 place-items-center rounded-[8px] border border-ptsd-green/30 bg-ptsd-green/10 text-ptsd-green hover:bg-ptsd-green/20"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <MessageCircle className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href={externalLinks.instagram}
+                aria-label="Open OPAi on Instagram"
+                className="focus-ring grid size-10 place-items-center rounded-[8px] border border-opai-blue/30 bg-opai-blue/10 text-opai-blue-soft hover:bg-opai-blue/20"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Instagram className="size-5" aria-hidden="true" />
+              </a>
+              <a
+                href={externalLinks.facebook}
+                aria-label="Open OPAi on Facebook"
+                className="focus-ring grid size-10 place-items-center rounded-[8px] border border-opai-blue/30 bg-opai-blue/10 text-opai-blue-soft hover:bg-opai-blue/20"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <Facebook className="size-5" aria-hidden="true" />
               </a>
             </div>
           </div>
