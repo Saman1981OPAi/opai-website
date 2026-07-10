@@ -119,6 +119,16 @@ See [docs/deployment.md](docs/deployment.md) for deployment details.
 
 See [docs/seo-readiness.md](docs/seo-readiness.md) for robots, sitemap, metadata, canonical URL, structured data, and Google Search Console readiness notes.
 
+## App Store URLs
+
+Static aliases keep the short App Store URLs available without removing the canonical pages:
+
+- `/privacy` aliases `/privacy-policy`
+- `/terms` aliases `/terms-of-service`
+- `/support` aliases `/contact`
+
+See [docs/app-store-url-aliases.md](docs/app-store-url-aliases.md) for the canonical URL policy.
+
 ## Sprint 001 Documentation
 
 - [Project audit](docs/project-audit.md)
