@@ -1,153 +1,94 @@
 import Image from "next/image";
-import { Brain, CalendarDays, CheckCircle2, FileText, Languages, ShieldCheck, Siren } from "lucide-react";
+import { ArrowRight, BrainCircuit, CalendarCheck2, Languages, RadioTower, ShieldCheck } from "lucide-react";
 import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
-import { FloatMotion, HeroMotion } from "@/components/Motion";
-import { StoreButtons } from "@/components/StoreButtons";
+import { HeroMotion } from "@/components/Motion";
+import { OpaiScene } from "@/components/OpaiScene";
 
-function CanadianFlag() {
+const operationalSignals = [
+  { icon: RadioTower, label: "Shift ready" },
+  { icon: BrainCircuit, label: "AI assisted" },
+  { icon: Languages, label: "Translation" },
+  { icon: CalendarCheck2, label: "Court aware" }
+];
+
+function CanadianMarker() {
   return (
-    <span className="relative h-8 w-14 shrink-0 overflow-hidden rounded-[3px] border border-white/30 shadow-[0_0_18px_rgba(10,132,255,0.18)]">
+    <span className="relative h-6 w-10 shrink-0 overflow-hidden rounded-[3px] border border-white/25">
       <Image
         src="/images/canadian-thin-blue-line-flag.png"
         alt="Canadian thin blue line flag"
         fill
         className="object-cover"
-        sizes="56px"
+        sizes="40px"
       />
     </span>
   );
 }
 
-const heroFeatures = [
-  {
-    icon: Siren,
-    title: "Start My Shift",
-    body: "Review key reminders before duty."
-  },
-  {
-    icon: FileText,
-    title: "New Incident",
-    body: "Organize notes, files, and report details."
-  },
-  {
-    icon: Languages,
-    title: "Translation",
-    body: "Support text, voice, and conversation workflows."
-  },
-  {
-    icon: CalendarDays,
-    title: "Calendar",
-    body: "Track court, training, and shift reminders."
-  },
-  {
-    icon: Brain,
-    title: "AI Assistant",
-    body: "Draft, review, search, and summarize."
-  },
-  {
-    icon: ShieldCheck,
-    title: "Secure & Private",
-    body: "Designed around consent and careful data handling."
-  }
-];
-
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-[#03050A]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(10,132,255,0.22),transparent_28%),radial-gradient(circle_at_78%_14%,rgba(110,219,143,0.12),transparent_24%),linear-gradient(180deg,#03050A_0%,#06101E_55%,#03050A_100%)]" />
-      <div className="fine-grid absolute inset-0 opacity-50" aria-hidden="true" />
-      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-44 opacity-40" aria-hidden="true">
-        <div className="absolute bottom-0 left-0 h-16 w-full bg-[linear-gradient(90deg,transparent_0_4%,rgba(10,132,255,.22)_4%_4.4%,transparent_4.4%_9%,rgba(10,132,255,.18)_9%_9.5%,transparent_9.5%_14%)] bg-[length:90px_100%]" />
-        <div className="absolute bottom-0 right-0 h-36 w-2/5 bg-[linear-gradient(to_top,rgba(10,132,255,.28),transparent)] [clip-path:polygon(0_100%,0_55%,6%_55%,6%_48%,12%_48%,12%_62%,18%_62%,18%_38%,24%_38%,24%_52%,31%_52%,31%_28%,33%_18%,35%_28%,35%_58%,42%_58%,42%_42%,49%_42%,49%_64%,55%_64%,55%_35%,62%_35%,62%_51%,69%_51%,69%_44%,76%_44%,76%_61%,83%_61%,83%_36%,90%_36%,90%_53%,100%_53%,100%_100%)]" />
-      </div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-72 opacity-15 lg:hidden" aria-hidden="true">
-        <Image
-          src="/images/opai-hero.png"
-          alt=""
-          fill
-          className="object-cover object-right"
-          sizes="100vw"
-        />
-      </div>
-      <Container className="relative grid items-center gap-10 py-12 sm:py-14 lg:min-h-[650px] lg:grid-cols-[0.92fr_1.08fr] lg:py-10">
-        <HeroMotion>
-          <p className="mb-5 inline-flex items-center gap-3 rounded-full border border-opai-blue/40 bg-opai-blue/10 px-4 py-2 text-sm font-semibold text-opai-blue-soft">
-            <CanadianFlag />
-            Currently in testing for Canadian police officers
-          </p>
-          <h1 className="max-w-4xl text-6xl font-black tracking-normal text-white sm:text-7xl lg:text-8xl">
-            OPA<span className="text-opai-blue">i</span>
-          </h1>
-          <p className="mt-3 text-xl font-semibold uppercase tracking-[0.16em] text-white/78 sm:text-2xl">
-            The AI Assistant Built for Law Enforcement
-          </p>
-          <p className="mt-4 text-2xl font-semibold text-opai-blue sm:text-3xl">Organize. Plan. Focus. Achieve.</p>
-          <p className="mt-5 max-w-2xl text-base leading-8 text-white/76 sm:text-lg">
-            Operational Police Ai helps Canadian police officers manage productivity, calendars, incident organization,
-            translation, court reminders, training reminders, officer readiness, and PTSD awareness with clarity and
-            confidence.
-          </p>
+    <section className="hero-3d relative overflow-hidden">
+      <div className="relative min-h-[calc(100svh-9.5rem)] border-b border-white/10">
+        <OpaiScene />
+        <Container className="relative z-10">
+          <div className="flex min-h-[calc(100svh-9.5rem)] items-end pb-10 pt-44 sm:pt-52 lg:min-h-[calc(100svh-9.5rem)] lg:items-center lg:pb-12 lg:pt-8">
+            <HeroMotion>
+              <div className="max-w-2xl">
+                <p className="mb-5 inline-flex min-h-9 items-center gap-3 border-l-2 border-ptsd-green bg-black/45 px-3 py-1.5 text-xs font-semibold uppercase text-white/78 backdrop-blur-md sm:text-sm">
+                  <CanadianMarker />
+                  iOS testing in Canada
+                </p>
 
-          <StoreButtons className="mt-8" />
+                <h1 className="text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:text-8xl">
+                  OPA<span className="text-opai-blue">i</span> Police
+                </h1>
+                <p className="mt-5 max-w-xl text-2xl font-semibold leading-tight text-white sm:text-3xl lg:text-4xl">
+                  Operational intelligence for Canadian policing.
+                </p>
+                <p className="mt-5 max-w-lg text-base leading-7 text-white/68 sm:text-lg">
+                  One calm command layer for shift readiness, incidents, translation, court, training, and officer support.
+                </p>
 
-          <div className="mt-7 flex flex-wrap items-center gap-3 text-sm font-semibold text-white/70">
-            <span className="inline-flex items-center gap-2 rounded-full border border-white/12 bg-white/[0.06] px-4 py-2">
-              <CanadianFlag />
-              Canada-only public safety focus
-            </span>
-            <span className="rounded-full border border-ptsd-green/30 bg-ptsd-green/10 px-4 py-2 text-ptsd-green">
-              PTSD awareness remains part of the mission
-            </span>
-          </div>
+                <div className="mt-7 flex flex-wrap gap-3">
+                  <ButtonLink href="/opai-police/" className="gap-2 px-5 sm:px-6">
+                    Explore OPAi
+                    <ArrowRight className="size-4" aria-hidden="true" />
+                  </ButtonLink>
+                  <ButtonLink href="/download/" variant="secondary" className="px-5 sm:px-6">
+                    Join launch updates
+                  </ButtonLink>
+                </div>
 
-          <div className="mt-8 flex flex-wrap gap-3">
-            <ButtonLink href="/founder-story/" variant="secondary" className="min-h-11 px-5">
-              Read my story
-            </ButtonLink>
-            <ButtonLink href="/opai-police/" variant="secondary" className="min-h-11 px-5">
-              OPAi Police
-            </ButtonLink>
-          </div>
-        </HeroMotion>
-
-        <FloatMotion className="relative hidden lg:block">
-          <div className="absolute -inset-2 rounded-[8px] bg-gradient-to-tr from-opai-blue/25 via-transparent to-ptsd-green/20 blur-2xl" />
-          <div className="glass relative overflow-hidden rounded-[8px]">
-            <Image
-              src="/images/opai-hero.png"
-              alt="Premium mobile app mockup for OPAi Police law-enforcement workflows"
-              width={1536}
-              height={864}
-              priority
-              className="h-auto w-full"
-              sizes="(min-width: 1024px) 54vw, 100vw"
-            />
-          </div>
-          <div className="glass absolute bottom-4 left-4 hidden max-w-xs rounded-[8px] p-4 sm:block">
-            <p className="flex items-center gap-2 text-sm font-semibold text-white">
-              <CheckCircle2 className="size-4 text-ptsd-green" aria-hidden="true" />
-              Canada-first policing support
-            </p>
-            <p className="mt-2 text-xs leading-5 text-white/58">
-              Operational productivity, wellness, and PTSD awareness for Canadian police officers.
-            </p>
-          </div>
-        </FloatMotion>
-      </Container>
-      <Container className="relative pb-8">
-        <div className="glass grid rounded-[8px] lg:grid-cols-6">
-          {heroFeatures.map((feature) => (
-            <div key={feature.title} className="flex gap-4 border-white/10 p-5 lg:border-r lg:last:border-r-0">
-              <feature.icon className="mt-1 size-8 shrink-0 text-opai-blue" aria-hidden="true" />
-              <div>
-                <h2 className="text-sm font-semibold text-white">{feature.title}</h2>
-                <p className="mt-1 text-xs leading-5 text-white/62">{feature.body}</p>
+                <div className="mt-7 flex flex-wrap gap-x-5 gap-y-2 text-xs font-medium uppercase text-white/52 sm:text-sm">
+                  <span className="inline-flex items-center gap-2">
+                    <ShieldCheck className="size-4 text-opai-blue-soft" aria-hidden="true" />
+                    Privacy-led
+                  </span>
+                  <span className="inline-flex items-center gap-2">
+                    <span className="size-2 bg-ptsd-green shadow-[0_0_14px_rgba(127,255,212,0.8)]" aria-hidden="true" />
+                    PTSD awareness
+                  </span>
+                  <span>Pre-launch prototype</span>
+                </div>
               </div>
-            </div>
-          ))}
-        </div>
-      </Container>
+            </HeroMotion>
+          </div>
+        </Container>
+      </div>
+
+      <div className="relative z-10 border-b border-white/10 bg-[#050b13]/94 backdrop-blur-xl">
+        <Container>
+          <div className="grid min-h-24 grid-cols-2 divide-x divide-y divide-white/10 sm:grid-cols-4 sm:divide-y-0">
+            {operationalSignals.map((signal) => (
+              <div key={signal.label} className="flex min-h-20 items-center gap-3 px-3 py-4 sm:px-5">
+                <signal.icon className="size-5 shrink-0 text-opai-blue-soft" aria-hidden="true" />
+                <span className="text-sm font-semibold text-white/78">{signal.label}</span>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </div>
     </section>
   );
 }
