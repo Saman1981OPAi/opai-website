@@ -54,27 +54,6 @@ function createMapleLeafGeometry() {
   return geometry;
 }
 
-function createShieldGeometry() {
-  const shape = new THREE.Shape();
-  shape.moveTo(-1.62, 1.05);
-  shape.quadraticCurveTo(-0.82, 1.48, 0, 1.58);
-  shape.quadraticCurveTo(0.82, 1.48, 1.62, 1.05);
-  shape.lineTo(1.48, -0.25);
-  shape.quadraticCurveTo(1.23, -1.34, 0, -2.02);
-  shape.quadraticCurveTo(-1.23, -1.34, -1.48, -0.25);
-  shape.closePath();
-
-  const geometry = new THREE.ExtrudeGeometry(shape, {
-    depth: 0.12,
-    bevelEnabled: true,
-    bevelSegments: 4,
-    bevelSize: 0.04,
-    bevelThickness: 0.04
-  });
-  geometry.center();
-  return geometry;
-}
-
 function createStarField() {
   const positions: number[] = [];
   let seed = 1927;
@@ -135,6 +114,7 @@ export function OpaiScene() {
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
     renderer.toneMappingExposure = 1.2;
+    renderer.localClippingEnabled = true;
 
     const world = new THREE.Group();
     scene.add(world);
@@ -151,86 +131,95 @@ export function OpaiScene() {
     );
     scene.add(stars);
 
-    const badge = new THREE.Group();
-    world.add(badge);
+    const leafVessel = new THREE.Group();
+    world.add(leafVessel);
 
-    const outerShield = new THREE.Mesh(
-      createShieldGeometry(),
+    const glassLeaf = new THREE.Mesh(
+      createMapleLeafGeometry(),
       new THREE.MeshPhysicalMaterial({
-        color: 0x07111f,
-        metalness: 0.95,
-        roughness: 0.19,
+        color: 0xd8efff,
+        metalness: 0.02,
+        roughness: 0.04,
+        transmission: 0.92,
+        transparent: true,
+        opacity: 0.72,
+        thickness: 0.55,
+        ior: 1.36,
         clearcoat: 1,
-        clearcoatRoughness: 0.08
+        clearcoatRoughness: 0.03,
+        attenuationColor: new THREE.Color(BLUE_SOFT),
+        attenuationDistance: 3.2,
+        side: THREE.DoubleSide
       })
     );
-    outerShield.scale.setScalar(1.34);
-    outerShield.position.z = -0.56;
-    badge.add(outerShield);
+    glassLeaf.scale.setScalar(1.28);
+    glassLeaf.position.z = 0.02;
+    leafVessel.add(glassLeaf);
 
-    const outerEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(outerShield.geometry, 18),
-      new THREE.LineBasicMaterial({ color: BLUE_SOFT, transparent: true, opacity: 0.92 })
-    );
-    outerEdges.scale.copy(outerShield.scale);
-    outerEdges.position.copy(outerShield.position);
-    badge.add(outerEdges);
-
-    const innerShield = new THREE.Mesh(
-      createShieldGeometry(),
-      new THREE.MeshPhysicalMaterial({
-        color: 0x05264d,
-        emissive: 0x031a38,
-        emissiveIntensity: 0.7,
-        metalness: 0.78,
-        roughness: 0.24,
-        clearcoat: 1,
-        clearcoatRoughness: 0.12
-      })
-    );
-    innerShield.scale.setScalar(1.12);
-    innerShield.position.z = -0.26;
-    badge.add(innerShield);
-
-    const innerEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(innerShield.geometry, 18),
-      new THREE.LineBasicMaterial({ color: AQUAMARINE, transparent: true, opacity: 0.42 })
-    );
-    innerEdges.scale.copy(innerShield.scale);
-    innerEdges.position.copy(innerShield.position);
-    badge.add(innerEdges);
-
-    const leaf = new THREE.Mesh(
+    const waterClipPlane = new THREE.Plane(new THREE.Vector3(0, -1, 0), 0.2);
+    const waterLeaf = new THREE.Mesh(
       createMapleLeafGeometry(),
       new THREE.MeshPhysicalMaterial({
         color: BLUE,
-        emissive: 0x032c68,
-        emissiveIntensity: 1.2,
-        metalness: 0.72,
-        roughness: 0.2,
-        clearcoat: 1
+        emissive: 0x003a85,
+        emissiveIntensity: 0.55,
+        metalness: 0.04,
+        roughness: 0.08,
+        transmission: 0.28,
+        transparent: true,
+        opacity: 0.78,
+        thickness: 0.42,
+        ior: 1.33,
+        clearcoat: 1,
+        clippingPlanes: [waterClipPlane],
+        side: THREE.DoubleSide
       })
     );
-    leaf.scale.setScalar(0.8);
-    leaf.position.set(0, 0.04, 0.18);
-    badge.add(leaf);
+    waterLeaf.scale.setScalar(1.2);
+    waterLeaf.position.z = 0.08;
+    leafVessel.add(waterLeaf);
 
     const leafEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(leaf.geometry, 16),
-      new THREE.LineBasicMaterial({ color: AQUAMARINE, transparent: true, opacity: 0.78 })
+      new THREE.EdgesGeometry(glassLeaf.geometry, 16),
+      new THREE.LineBasicMaterial({ color: 0xd8efff, transparent: true, opacity: 0.88 })
     );
-    leafEdges.scale.copy(leaf.scale);
-    leafEdges.position.copy(leaf.position);
-    badge.add(leafEdges);
+    leafEdges.scale.copy(glassLeaf.scale);
+    leafEdges.position.copy(glassLeaf.position);
+    leafVessel.add(leafEdges);
 
-    const crownArc = new THREE.Mesh(
-      new THREE.TorusGeometry(1.72, 0.055, 10, 100, Math.PI),
-      new THREE.MeshBasicMaterial({ color: BLUE_SOFT, transparent: true, opacity: 0.9 })
-    );
-    crownArc.position.set(0, 0.96, 0.05);
-    crownArc.rotation.z = Math.PI;
-    crownArc.scale.y = 0.42;
-    badge.add(crownArc);
+    const bubbleMaterial = new THREE.MeshPhysicalMaterial({
+      color: 0xc8f5ff,
+      metalness: 0,
+      roughness: 0.02,
+      transmission: 0.82,
+      transparent: true,
+      opacity: 0.72,
+      thickness: 0.08,
+      ior: 1.05,
+      clearcoat: 1
+    });
+    const bubbleGeometry = new THREE.SphereGeometry(0.055, 16, 12);
+    const bubbleSeeds = [
+      [-0.42, 0.08, 0.04],
+      [-0.23, 0.32, 0.12],
+      [-0.08, 0.58, 0.2],
+      [0.12, 0.16, 0.28],
+      [0.3, 0.45, 0.36],
+      [0.46, 0.72, 0.44],
+      [-0.51, 0.85, 0.52],
+      [-0.31, 0.67, 0.6],
+      [0.01, 0.92, 0.68],
+      [0.25, 0.78, 0.76],
+      [0.5, 0.24, 0.84]
+    ];
+    const bubbles = bubbleSeeds.map(([x, phase, size], index) => {
+      const bubble = new THREE.Mesh(bubbleGeometry, bubbleMaterial);
+      bubble.position.set(x, -0.9 + phase, 0.34 + (index % 3) * 0.025);
+      bubble.scale.setScalar(0.7 + size * 0.7);
+      bubble.userData = { baseX: x, phase, speed: 0.09 + (index % 4) * 0.018 };
+      leafVessel.add(bubble);
+      return bubble;
+    });
 
     const ringMaterial = new THREE.MeshBasicMaterial({ color: BLUE, transparent: true, opacity: 0.48 });
     const outerRing = new THREE.Mesh(new THREE.TorusGeometry(2.72, 0.027, 10, 180), ringMaterial);
@@ -324,8 +313,11 @@ export function OpaiScene() {
     const positionWorld = (width: number) => {
       const mobile = width < 768;
       const tablet = width >= 768 && width < 1100;
-      world.position.set(mobile ? 0.75 : tablet ? 2.2 : 3.25, mobile ? 2.0 : 0.15, 0);
-      world.scale.setScalar(mobile ? 0.57 : tablet ? 0.78 : 1);
+      const worldY = mobile ? 2.0 : 0.15;
+      const worldScale = mobile ? 0.57 : tablet ? 0.78 : 1;
+      world.position.set(mobile ? 0.75 : tablet ? 2.2 : 3.25, worldY, 0);
+      world.scale.setScalar(worldScale);
+      waterClipPlane.constant = worldY + 0.2 * worldScale;
       camera.position.z = mobile ? 10.8 : 9.5;
     };
 
@@ -364,8 +356,13 @@ export function OpaiScene() {
       arc.rotation.z = 0.4 + (reducedMotion ? 0 : elapsed * 0.035);
       blockchain.rotation.z = -0.2 + (reducedMotion ? 0 : elapsed * 0.018);
       stars.rotation.y = reducedMotion ? 0 : elapsed * 0.004;
-      badge.rotation.z = reducedMotion ? 0 : Math.sin(elapsed * 0.38) * 0.012;
-      leaf.position.z = 0.25 + (reducedMotion ? 0 : Math.sin(elapsed * 0.9) * 0.08);
+      leafVessel.rotation.z = reducedMotion ? 0 : Math.sin(elapsed * 0.38) * 0.018;
+      leafVessel.position.z = reducedMotion ? 0 : Math.sin(elapsed * 0.72) * 0.08;
+      bubbles.forEach((bubble, index) => {
+        const { baseX, phase, speed } = bubble.userData as { baseX: number; phase: number; speed: number };
+        bubble.position.y = -0.95 + ((elapsed * speed + phase) % 1.16);
+        bubble.position.x = baseX + (reducedMotion ? 0 : Math.sin(elapsed * 1.2 + index) * 0.025);
+      });
       renderer.render(scene, camera);
     };
 
