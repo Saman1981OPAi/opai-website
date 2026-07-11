@@ -52,11 +52,11 @@ export function Header() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
-          <div className="mr-4 flex items-center gap-3 text-right">
+          <div className="mr-3 grid grid-cols-[2.25rem_minmax(0,13rem)] items-center gap-3 border-l border-ptsd-green/30 pl-4 text-left">
             <Ribbon className="size-9 text-ptsd-green" aria-hidden="true" />
-            <p className="text-xs leading-5">
-              <span className="block font-semibold uppercase tracking-[0.12em] text-ptsd-green">Supporting PTSD Awareness</span>
-              <span className="text-ptsd-green/80">Every download helps break the stigma</span>
+            <p className="min-w-0 text-[11px] leading-4">
+              <span className="block font-semibold uppercase tracking-[0.1em] text-ptsd-green">Supporting PTSD Awareness</span>
+              <span className="mt-0.5 block text-ptsd-green/78">Every download helps break the stigma</span>
             </p>
           </div>
           <ButtonLink href="/download/" className="min-h-11 px-5">

@@ -10,27 +10,31 @@ const AQUAMARINE = 0x7fffd4;
 function createMapleLeafGeometry() {
   const shape = new THREE.Shape();
   const points: Array<[number, number]> = [
-    [0, 1.62],
-    [-0.19, 1.12],
-    [-0.52, 1.3],
-    [-0.4, 0.83],
-    [-0.88, 1.01],
-    [-0.69, 0.5],
-    [-1.16, 0.38],
-    [-0.57, -0.05],
-    [-0.7, -0.43],
-    [-0.15, -0.27],
-    [-0.11, -1.07],
-    [0.11, -1.07],
-    [0.15, -0.27],
-    [0.7, -0.43],
-    [0.57, -0.05],
-    [1.16, 0.38],
-    [0.69, 0.5],
-    [0.88, 1.01],
-    [0.4, 0.83],
-    [0.52, 1.3],
-    [0.19, 1.12]
+    [0, 1.72],
+    [-0.18, 1.2],
+    [-0.48, 1.38],
+    [-0.38, 0.91],
+    [-0.84, 1.02],
+    [-0.69, 0.55],
+    [-1.22, 0.44],
+    [-0.72, 0.07],
+    [-0.9, -0.14],
+    [-0.28, -0.04],
+    [-0.36, -0.55],
+    [-0.08, -0.4],
+    [-0.08, -1.25],
+    [0.08, -1.25],
+    [0.08, -0.4],
+    [0.36, -0.55],
+    [0.28, -0.04],
+    [0.9, -0.14],
+    [0.72, 0.07],
+    [1.22, 0.44],
+    [0.69, 0.55],
+    [0.84, 1.02],
+    [0.38, 0.91],
+    [0.48, 1.38],
+    [0.18, 1.2]
   ];
 
   points.forEach(([x, y], index) => {
@@ -52,11 +56,12 @@ function createMapleLeafGeometry() {
 
 function createShieldGeometry() {
   const shape = new THREE.Shape();
-  shape.moveTo(-1.55, 1.18);
-  shape.quadraticCurveTo(0, 1.64, 1.55, 1.18);
-  shape.lineTo(1.37, -0.36);
-  shape.quadraticCurveTo(0.95, -1.35, 0, -1.88);
-  shape.quadraticCurveTo(-0.95, -1.35, -1.37, -0.36);
+  shape.moveTo(-1.62, 1.05);
+  shape.quadraticCurveTo(-0.82, 1.48, 0, 1.58);
+  shape.quadraticCurveTo(0.82, 1.48, 1.62, 1.05);
+  shape.lineTo(1.48, -0.25);
+  shape.quadraticCurveTo(1.23, -1.34, 0, -2.02);
+  shape.quadraticCurveTo(-1.23, -1.34, -1.48, -0.25);
   shape.closePath();
 
   const geometry = new THREE.ExtrudeGeometry(shape, {
@@ -67,6 +72,24 @@ function createShieldGeometry() {
     bevelThickness: 0.04
   });
   geometry.center();
+  return geometry;
+}
+
+function createStarField() {
+  const positions: number[] = [];
+  let seed = 1927;
+
+  const random = () => {
+    seed = (seed * 16807) % 2147483647;
+    return (seed - 1) / 2147483646;
+  };
+
+  for (let index = 0; index < 620; index += 1) {
+    positions.push((random() - 0.5) * 24, (random() - 0.5) * 15, -2 - random() * 12);
+  }
+
+  const geometry = new THREE.BufferGeometry();
+  geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
   return geometry;
 }
 
@@ -116,29 +139,66 @@ export function OpaiScene() {
     const world = new THREE.Group();
     scene.add(world);
 
-    const shield = new THREE.Mesh(
-      createShieldGeometry(),
-      new THREE.MeshPhysicalMaterial({
-        color: 0x061a32,
-        metalness: 0.8,
-        roughness: 0.25,
-        clearcoat: 1,
-        clearcoatRoughness: 0.15,
+    const stars = new THREE.Points(
+      createStarField(),
+      new THREE.PointsMaterial({
+        color: 0xb8dcff,
+        size: 0.025,
         transparent: true,
-        opacity: 0.82
+        opacity: 0.78,
+        sizeAttenuation: true
       })
     );
-    shield.scale.setScalar(1.16);
-    shield.position.z = -0.35;
-    world.add(shield);
+    scene.add(stars);
 
-    const shieldEdges = new THREE.LineSegments(
-      new THREE.EdgesGeometry(shield.geometry, 20),
-      new THREE.LineBasicMaterial({ color: BLUE_SOFT, transparent: true, opacity: 0.68 })
+    const badge = new THREE.Group();
+    world.add(badge);
+
+    const outerShield = new THREE.Mesh(
+      createShieldGeometry(),
+      new THREE.MeshPhysicalMaterial({
+        color: 0x07111f,
+        metalness: 0.95,
+        roughness: 0.19,
+        clearcoat: 1,
+        clearcoatRoughness: 0.08
+      })
     );
-    shieldEdges.scale.copy(shield.scale);
-    shieldEdges.position.copy(shield.position);
-    world.add(shieldEdges);
+    outerShield.scale.setScalar(1.34);
+    outerShield.position.z = -0.56;
+    badge.add(outerShield);
+
+    const outerEdges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(outerShield.geometry, 18),
+      new THREE.LineBasicMaterial({ color: BLUE_SOFT, transparent: true, opacity: 0.92 })
+    );
+    outerEdges.scale.copy(outerShield.scale);
+    outerEdges.position.copy(outerShield.position);
+    badge.add(outerEdges);
+
+    const innerShield = new THREE.Mesh(
+      createShieldGeometry(),
+      new THREE.MeshPhysicalMaterial({
+        color: 0x05264d,
+        emissive: 0x031a38,
+        emissiveIntensity: 0.7,
+        metalness: 0.78,
+        roughness: 0.24,
+        clearcoat: 1,
+        clearcoatRoughness: 0.12
+      })
+    );
+    innerShield.scale.setScalar(1.12);
+    innerShield.position.z = -0.26;
+    badge.add(innerShield);
+
+    const innerEdges = new THREE.LineSegments(
+      new THREE.EdgesGeometry(innerShield.geometry, 18),
+      new THREE.LineBasicMaterial({ color: AQUAMARINE, transparent: true, opacity: 0.42 })
+    );
+    innerEdges.scale.copy(innerShield.scale);
+    innerEdges.position.copy(innerShield.position);
+    badge.add(innerEdges);
 
     const leaf = new THREE.Mesh(
       createMapleLeafGeometry(),
@@ -151,9 +211,9 @@ export function OpaiScene() {
         clearcoat: 1
       })
     );
-    leaf.scale.setScalar(0.82);
-    leaf.position.set(0, 0.08, 0.25);
-    world.add(leaf);
+    leaf.scale.setScalar(0.8);
+    leaf.position.set(0, 0.04, 0.18);
+    badge.add(leaf);
 
     const leafEdges = new THREE.LineSegments(
       new THREE.EdgesGeometry(leaf.geometry, 16),
@@ -161,7 +221,16 @@ export function OpaiScene() {
     );
     leafEdges.scale.copy(leaf.scale);
     leafEdges.position.copy(leaf.position);
-    world.add(leafEdges);
+    badge.add(leafEdges);
+
+    const crownArc = new THREE.Mesh(
+      new THREE.TorusGeometry(1.72, 0.055, 10, 100, Math.PI),
+      new THREE.MeshBasicMaterial({ color: BLUE_SOFT, transparent: true, opacity: 0.9 })
+    );
+    crownArc.position.set(0, 0.96, 0.05);
+    crownArc.rotation.z = Math.PI;
+    crownArc.scale.y = 0.42;
+    badge.add(crownArc);
 
     const ringMaterial = new THREE.MeshBasicMaterial({ color: BLUE, transparent: true, opacity: 0.48 });
     const outerRing = new THREE.Mesh(new THREE.TorusGeometry(2.72, 0.027, 10, 180), ringMaterial);
@@ -182,32 +251,51 @@ export function OpaiScene() {
     arc.rotation.set(1.18, -0.16, 0.4);
     world.add(arc);
 
-    const latticePositions: number[] = [];
-    for (let lane = 0; lane < 7; lane += 1) {
-      const radius = 3.55 + lane * 0.22;
-      const start = -1.15 + lane * 0.28;
-      for (let step = 0; step < 10; step += 1) {
-        const angleA = start + step * 0.16;
-        const angleB = angleA + 0.1;
-        const z = -1.4 + ((lane + step) % 4) * 0.32;
-        latticePositions.push(
-          Math.cos(angleA) * radius,
-          Math.sin(angleA) * radius,
-          z,
-          Math.cos(angleB) * radius,
-          Math.sin(angleB) * radius,
-          z + 0.08
-        );
-      }
-    }
-    const latticeGeometry = new THREE.BufferGeometry();
-    latticeGeometry.setAttribute("position", new THREE.Float32BufferAttribute(latticePositions, 3));
-    const lattice = new THREE.LineSegments(
-      latticeGeometry,
-      new THREE.LineBasicMaterial({ color: BLUE, transparent: true, opacity: 0.2 })
+    const blockchain = new THREE.Group();
+    const blockchainPoints = [
+      [-3.45, 1.7, -0.8],
+      [-2.75, 2.55, -0.35],
+      [-1.65, 2.88, -0.95],
+      [-0.55, 3.25, -0.4],
+      [0.7, 3.05, -0.9],
+      [1.82, 2.72, -0.28],
+      [2.9, 2.1, -0.8],
+      [3.48, 1.1, -0.22],
+      [3.55, -0.25, -0.8],
+      [2.92, -1.45, -0.3],
+      [1.75, -2.52, -0.95],
+      [0.42, -3.0, -0.38],
+      [-1.02, -2.88, -0.88],
+      [-2.3, -2.22, -0.3],
+      [-3.2, -1.25, -0.9],
+      [-3.62, 0.2, -0.25]
+    ].map(([x, y, z]) => new THREE.Vector3(x, y, z));
+
+    const nodeGeometry = new THREE.IcosahedronGeometry(0.11, 0);
+    const nodeMaterial = new THREE.MeshBasicMaterial({ color: AQUAMARINE });
+    blockchainPoints.forEach((point, index) => {
+      const node = new THREE.Mesh(nodeGeometry, index % 3 === 0 ? nodeMaterial : ringMaterial);
+      node.position.copy(point);
+      node.scale.setScalar(index % 4 === 0 ? 1.35 : 1);
+      blockchain.add(node);
+    });
+
+    const chainPositions: number[] = [];
+    blockchainPoints.forEach((point, index) => {
+      const next = blockchainPoints[(index + 1) % blockchainPoints.length];
+      const cross = blockchainPoints[(index + 3) % blockchainPoints.length];
+      chainPositions.push(point.x, point.y, point.z, next.x, next.y, next.z);
+      if (index % 2 === 0) chainPositions.push(point.x, point.y, point.z, cross.x, cross.y, cross.z);
+    });
+    const chainGeometry = new THREE.BufferGeometry();
+    chainGeometry.setAttribute("position", new THREE.Float32BufferAttribute(chainPositions, 3));
+    const chain = new THREE.LineSegments(
+      chainGeometry,
+      new THREE.LineBasicMaterial({ color: BLUE_SOFT, transparent: true, opacity: 0.28 })
     );
-    lattice.rotation.z = -0.28;
-    world.add(lattice);
+    blockchain.add(chain);
+    blockchain.rotation.z = -0.2;
+    world.add(blockchain);
 
     const floor = new THREE.GridHelper(18, 32, BLUE, 0x12304d);
     floor.position.set(1.8, -3.4, -1.8);
@@ -274,6 +362,9 @@ export function OpaiScene() {
       outerRing.rotation.z = reducedMotion ? 0.18 : elapsed * 0.08;
       innerRing.rotation.z = reducedMotion ? -0.3 : -elapsed * 0.12;
       arc.rotation.z = 0.4 + (reducedMotion ? 0 : elapsed * 0.035);
+      blockchain.rotation.z = -0.2 + (reducedMotion ? 0 : elapsed * 0.018);
+      stars.rotation.y = reducedMotion ? 0 : elapsed * 0.004;
+      badge.rotation.z = reducedMotion ? 0 : Math.sin(elapsed * 0.38) * 0.012;
       leaf.position.z = 0.25 + (reducedMotion ? 0 : Math.sin(elapsed * 0.9) * 0.08);
       renderer.render(scene, camera);
     };

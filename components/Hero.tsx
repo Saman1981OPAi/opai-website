@@ -35,9 +35,9 @@ export function Hero() {
           <div className="flex min-h-[calc(100svh-9.5rem)] items-end pb-10 pt-44 sm:pt-52 lg:min-h-[calc(100svh-9.5rem)] lg:items-center lg:pb-12 lg:pt-8">
             <HeroMotion>
               <div className="max-w-2xl">
-                <p className="mb-5 inline-flex min-h-9 items-center gap-3 border-l-2 border-ptsd-green bg-black/45 px-3 py-1.5 text-xs font-semibold uppercase text-white/78 backdrop-blur-md sm:text-sm">
+                <p className="mb-5 inline-flex min-h-10 max-w-full items-center gap-3 border-l-2 border-ptsd-green bg-black/55 px-3 py-2 text-[11px] font-semibold uppercase leading-4 text-white/82 backdrop-blur-md sm:text-sm sm:leading-5">
                   <CanadianMarker />
-                  iOS testing in Canada
+                  <span>For Canadian Law Enforcement AI Assistant</span>
                 </p>
 
                 <h1 className="text-5xl font-black leading-[0.94] text-white sm:text-6xl lg:text-8xl">
