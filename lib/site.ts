@@ -193,7 +193,7 @@ export const organizationStructuredData = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "OPAi",
-  legalName: "1001246299 ONTARIO INC.",
+  legalName: "1001674341 ONTARIO INC.",
   url: site.url,
   email: site.email,
   logo: `${site.url}/images/brand/opai-police-ptsd-emblem.png`,

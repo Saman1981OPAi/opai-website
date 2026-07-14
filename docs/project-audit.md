@@ -1,7 +1,7 @@
 # OPAi Master Project Audit
 
 Status: Sprint 001 setup
-Owner: 1001246299 ONTARIO INC.
+Owner: 1001674341 ONTARIO INC.
 Primary repository for this audit: `opai-website`
 Current product posture: Testing / pre-launch
 

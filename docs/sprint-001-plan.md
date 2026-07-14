@@ -73,7 +73,7 @@ Build and prepare the official OPAi public website foundation for human review. 
 - All required pages are present.
 - Site uses dark professional OPAi brand styling.
 - App download calls to action do not imply public launch.
-- Footer includes `Project Owner: 1001246299 ONTARIO INC.`
+- Footer includes `Project Owner: 1001674341 ONTARIO INC.`
 - Website avoids official police service marks and protected insignia.
 - Public pages include appropriate disclaimers.
 - Documentation files exist:
