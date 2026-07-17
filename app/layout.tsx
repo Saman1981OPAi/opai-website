@@ -3,7 +3,6 @@ import type { ReactNode } from "react";
 import { DisclaimerBand } from "@/components/DisclaimerBand";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
-import { VisitCounter } from "@/components/VisitCounter";
 import {
   canonicalUrl,
   organizationStructuredData,
@@ -76,7 +75,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         />
         <Header />
         <main id="main">{children}</main>
-        <VisitCounter />
         <DisclaimerBand />
         <Footer />
       </body>

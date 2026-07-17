@@ -10,11 +10,17 @@ import { createPageMetadata, featureCards } from "@/lib/site";
 export const metadata: Metadata = createPageMetadata("/features/");
 
 const workflow = [
-  "Start a shift with quick reminders instead of a forced checklist.",
-  "Capture an incident with notes, people, media, documents, and evidence references in one flow.",
-  "Use AI to draft, review, translate, summarize, search, and prepare follow-ups.",
-  "Stay ahead of court, training, requalification, and shift reminders."
+  "Organize officer-provided facts, audio, notes, and follow-ups in focused workflows.",
+  "Use AI to draft, transcribe, translate, summarize, and identify missing information.",
+  "Keep paid duty, canvass, court, calendar, training, and reminders visible.",
+  "Use native iPhone weather and verified support resources without background tracking."
 ];
+
+const featureAnchors: Record<string, string> = {
+  Calendar: "calendar",
+  Training: "training",
+  Weather: "weather"
+};
 
 export default function FeaturesPage() {
   return (
@@ -22,14 +28,19 @@ export default function FeaturesPage() {
       <PageHero
         eyebrow="Features"
         title="Operational tools for modern law enforcement."
-        body="OPAi Police is designed for shift readiness, incident organization, translation, court reminders, training reminders, calendar management, AI assistance, and PTSD awareness."
+        body="OPAi Police combines AI assistance, report writing, audio transcription, translation, paid duty, canvass, calendar, training, weather, and verified mental-health resources."
       />
       <section className="py-20">
         <Container>
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {featureCards.map((feature, index) => (
-              <FeatureCard key={feature.title} {...feature} index={index} />
-            ))}
+            {featureCards.map((feature, index) => {
+              const anchor = featureAnchors[feature.title];
+              return (
+                <div key={feature.title} id={anchor} className="scroll-mt-28">
+                  <FeatureCard {...feature} index={index} />
+                </div>
+              );
+            })}
           </div>
         </Container>
       </section>
@@ -38,7 +49,7 @@ export default function FeaturesPage() {
           <SectionHeader
             eyebrow="Workflow"
             title="Useful reminders without administrative drag."
-            body="The experience is structured for officers who need clarity, speed, and confidence without being forced through unnecessary reporting steps."
+            body="The experience keeps officer actions explicit, labels AI output clearly, and reduces reading load without replacing policy, supervision, or official systems."
           />
           <div className="mt-10 grid gap-4 lg:grid-cols-4">
             {workflow.map((step, index) => (

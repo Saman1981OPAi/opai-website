@@ -34,7 +34,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 lg:flex" aria-label="Primary navigation">
+        <nav className="hidden items-center gap-1 xl:flex" aria-label="Primary navigation">
           {navItems.map((item) => {
             const active = normalizedPathname === item.href;
             return (
@@ -51,22 +51,22 @@ export function Header() {
           })}
         </nav>
 
-        <div className="hidden items-center gap-3 lg:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <div className="mr-3 grid grid-cols-[2.25rem_minmax(0,13rem)] items-center gap-3 border-l border-ptsd-green/30 pl-4 text-left">
             <Ribbon className="size-9 text-ptsd-green" aria-hidden="true" />
             <p className="min-w-0 text-[11px] leading-4">
               <span className="block font-semibold uppercase tracking-[0.1em] text-ptsd-green">Supporting PTSD Awareness</span>
-              <span className="mt-0.5 block text-ptsd-green/78">Every download helps break the stigma</span>
+              <span className="mt-0.5 block text-ptsd-green/78">Verified resources. Support without stigma.</span>
             </p>
           </div>
-          <ButtonLink href="/download/" className="min-h-11 px-5">
-            Download
+          <ButtonLink href="/features/" className="min-h-11 px-5">
+            Explore
           </ButtonLink>
         </div>
 
         <button
           type="button"
-          className="focus-ring grid size-11 place-items-center rounded-full border border-white/12 bg-white/[0.06] lg:hidden"
+          className="focus-ring grid size-11 place-items-center rounded-full border border-white/12 bg-white/[0.06] xl:hidden"
           onClick={() => setIsOpen((value) => !value)}
           aria-expanded={isOpen}
           aria-controls="mobile-menu"
@@ -77,7 +77,7 @@ export function Header() {
       </Container>
 
       {isOpen ? (
-        <div id="mobile-menu" className="border-t border-white/10 bg-surface/96 lg:hidden">
+        <div id="mobile-menu" className="border-t border-white/10 bg-surface/96 xl:hidden">
           <Container className="grid gap-2 py-4">
             {navItems.map((item) => (
               <Link

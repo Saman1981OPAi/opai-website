@@ -2,9 +2,9 @@
 
 Official corporate website for [opaiapp.com](https://opaiapp.com).
 
-Current status: Testing / Pre-launch
+Current status: Public product website
 
-OPAi, Operational Police Ai, is a public-facing brand and product website for OPAi Police, a productivity and AI assistance tool designed for Canadian police officers. The site introduces the product vision, supports PTSD awareness, provides founder context, and publishes pre-launch download destinations for iOS and Android.
+OPAi, Operational Police Ai, is the public product website for OPAi Police, a productivity and AI assistance tool designed for Canadian law-enforcement officers. The site explains the product, its safety boundaries, verified mental-health resources, privacy practices, company ownership, and mobile access policy.
 
 ## Project 001
 
@@ -29,6 +29,12 @@ The website establishes the OPAi brand foundation before later roadmap work begi
 - Home
 - Features
 - OPAi Police
+- Audio Statement
+- Report Writing
+- Translation
+- Paid Duty
+- Canvass
+- Mental Health Resources
 - PTSD Awareness
 - Founder Story
 - Download
@@ -38,7 +44,7 @@ The website establishes the OPAi brand foundation before later roadmap work begi
 
 ## Product Positioning
 
-The website must use Testing / Pre-launch language until the app is publicly released.
+Public copy focuses on product capabilities and does not claim App Store availability before Apple approval. Fake store badges, unavailable links, fabricated usage totals, and public beta or prototype language are prohibited.
 
 Required public disclaimers:
 
@@ -46,10 +52,6 @@ Required public disclaimers:
 - OPAi Police is not a replacement for official police systems, supervision, service policy, legal advice, medical advice, or professional judgment.
 - AI-generated responses may be incomplete or inaccurate and must be verified.
 - PTSD awareness content is educational only and is not medical treatment, diagnosis, therapy, or crisis intervention.
-
-## Site Visit Counter
-
-The home page includes a visible visit counter starting from 100,000. It increments on page navigation, refreshes, back/forward visits, and manual repeat-count interaction in the same browser. This counter is privacy-safe for the static website: it uses local browser storage only and does not add analytics, cookies, IP tracking, advertising, third-party scripts, or a backend database.
 
 ## Brand and Content Rules
 
@@ -62,6 +64,7 @@ The home page includes a visible visit counter starting from 100,000. It increme
 - Do not use RCMP, OPP, TPS, YRP, or other service-specific marks.
 - Do not use copyrighted third-party imagery unless properly licensed.
 - Do not add analytics, advertising, tracking, cookies, payments, or subscription logic unless explicitly approved.
+- Public project owner: `1001674341 ONTARIO INC.`
 
 ## Local Development
 

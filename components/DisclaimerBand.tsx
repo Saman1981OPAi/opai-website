@@ -27,7 +27,7 @@ export function DisclaimerBand() {
       <Container>
         <div className="grid gap-4 lg:grid-cols-[0.8fr_1fr_1fr_1fr] lg:items-start">
           <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ptsd-green">Currently in Testing</p>
+            <p className="text-sm font-semibold uppercase tracking-[0.18em] text-ptsd-green">Use responsibly</p>
             <h2 id="important-disclaimers" className="mt-3 text-2xl font-semibold text-white">
               Important use notes
             </h2>

@@ -56,7 +56,7 @@ export function Hero() {
                     <ArrowRight className="size-4" aria-hidden="true" />
                   </ButtonLink>
                   <ButtonLink href="/download/" variant="secondary" className="px-5 sm:px-6">
-                    Join launch updates
+                    App access
                   </ButtonLink>
                 </div>
 
@@ -69,7 +69,7 @@ export function Hero() {
                     <span className="size-2 bg-ptsd-green shadow-[0_0_14px_rgba(127,255,212,0.8)]" aria-hidden="true" />
                     PTSD awareness
                   </span>
-                  <span>Pre-launch prototype</span>
+                  <span>Officer-focused</span>
                 </div>
               </div>
             </HeroMotion>
