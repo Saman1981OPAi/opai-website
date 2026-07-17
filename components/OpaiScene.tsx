@@ -100,6 +100,7 @@ function disposeScene(scene: THREE.Scene) {
 export function OpaiScene() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const [hasFallback, setHasFallback] = useState(false);
+  const [isReady, setIsReady] = useState(false);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -280,6 +281,7 @@ export function OpaiScene() {
     const targetPointer = new THREE.Vector2(0, 0);
     let isVisible = true;
     let animationFrame = 0;
+    let hasRendered = false;
 
     const positionWorld = (width: number) => {
       const mobile = width < 768;
@@ -329,6 +331,10 @@ export function OpaiScene() {
       leafVessel.rotation.z = reducedMotion ? 0 : Math.sin(elapsed * 0.38) * 0.018;
       leafVessel.position.z = reducedMotion ? 0 : Math.sin(elapsed * 0.72) * 0.08;
       renderer.render(scene, camera);
+      if (!hasRendered) {
+        hasRendered = true;
+        setIsReady(true);
+      }
     };
 
     resize();
@@ -350,7 +356,7 @@ export function OpaiScene() {
   return (
     <div className="hero-scene" aria-hidden="true">
       <canvas ref={canvasRef} data-render-state={hasFallback ? "fallback" : "webgl"} />
-      {hasFallback ? <div className="hero-scene-fallback" /> : null}
+      {hasFallback || !isReady ? <div className="hero-scene-fallback" /> : null}
     </div>
   );
 }

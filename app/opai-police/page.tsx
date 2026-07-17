@@ -15,7 +15,7 @@ export default function OpaiPolicePage() {
       <PageHero
         eyebrow="OPAi Police"
         title="The AI assistant built for law enforcement."
-        body="OPAi Police is shaped for Canadian police officers who need practical support for productivity, shift readiness, incidents, translation, calendar management, court, training, notifications, and PTSD awareness."
+        body="OPAi Police is shaped for Canadian law-enforcement officers who need focused support for AI assistance, report writing, translation, local organization, scheduling, and verified resources."
       />
       <section className="py-20">
         <Container>
@@ -32,7 +32,7 @@ export default function OpaiPolicePage() {
             <SectionHeader
               eyebrow="Designed for trust"
               title="Readable, respectful, and ready for operational pressure."
-              body="A law-enforcement AI assistant must feel credible at first glance and dependable after repeated use. OPAi keeps the interface calm, the language direct, and the workflows obvious."
+              body="A law-enforcement AI assistant must be clear about its limits. OPAi keeps the interface calm, the language direct, the actions explicit, and verification close to every AI workflow."
             />
             <FadeIn className="glass rounded-[8px] p-8">
               <dl className="grid gap-6 sm:grid-cols-3">

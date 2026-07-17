@@ -1,30 +1,42 @@
 import type { Metadata } from "next";
 import { Container } from "@/components/Container";
 import { PageHero } from "@/components/PageHero";
-import { createPageMetadata } from "@/lib/site";
+import { createPageMetadata, site } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata("/privacy-policy/");
 
 const sections = [
   {
-    title: "Current public website and app preview",
-    body: "The current OPAi public website and launch preview do not create user accounts, process payments, store incident data, upload documents, or transmit app activity to an OPAi backend."
+    title: "Website privacy",
+    body: "The public OPAi website does not use advertising, behavioural analytics, tracking pixels, or a fabricated visit counter. If you contact OPAi by email, the information you choose to send is used to respond to your inquiry."
   },
   {
-    title: "Contact by email",
-    body: "If you contact OPAi by email, we may use the information you provide to respond to your message, discuss launch updates, support partnerships, or answer product questions."
+    title: "Accounts and operational data",
+    body: "The mobile application may process account details, consent choices, preferences, and officer-entered workflow information. Access controls, session safeguards, deletion choices, and data-minimization principles govern these features. OPAi is not an official police records system."
   },
   {
-    title: "Future production services",
-    body: "Future versions of OPAi may include accounts, secure synchronization, notifications, AI interactions, incident workflows, document metadata, translations, and support features. Privacy practices will be updated before those services collect or process personal information."
+    title: "AI and OpenAI processing",
+    body: "When a user explicitly requests AI assistance, report drafting, transcription, or translation, the submitted content is sent through the authenticated OPAi backend and may be processed by OpenAI. Provider response storage is disabled where supported, and operational logs exclude prompts, translations, audio, images, documents, transcripts, authorization values, and sensitive content. Do not submit confidential police records unless authorized."
   },
   {
-    title: "Security",
-    body: "OPAi is being designed with administrative, technical, and organizational safeguards appropriate for public safety workflows. No digital system can be guaranteed to be perfectly secure."
+    title: "Audio, images, and documents",
+    body: "Media is transmitted only after an explicit user action for the selected transcription or translation task. File type, size, duration, page, request, and usage limits may apply. Temporary processing files are removed after success or failure, and content is not intentionally written to application logs."
   },
   {
-    title: "Contact",
-    body: "For privacy questions, contact Admin@opaiapp.com."
+    title: "Location and weather",
+    body: "On iPhone, weather uses native Apple WeatherKit. Foreground location is requested only after the user chooses location-based weather. Users can deny location and select a Canadian city manually. OPAi does not request background location for weather or canvass. Cached weather supports limited offline display and includes Apple Weather attribution."
+  },
+  {
+    title: "Mental-health resources",
+    body: "Resource calls, texts, and websites open only after user confirmation. OPAi does not assess mental-health risk, contact a provider automatically, record which resource a person uses, store call history, or share resource selections. External providers apply their own privacy practices."
+  },
+  {
+    title: "Security and retention",
+    body: "OPAi uses security controls appropriate to the service boundary, including authenticated requests, quotas, validation, request limits, and privacy-safe operational logs. No digital system can be guaranteed perfectly secure. Data is retained only as needed for the requested feature, account obligations, security, law, and user-controlled local workflows."
+  },
+  {
+    title: "Questions and requests",
+    body: `For privacy, access, correction, or deletion questions, contact ${site.email}. OPAi is operated by 1001674341 ONTARIO INC.`
   }
 ];
 
@@ -33,11 +45,12 @@ export default function PrivacyPolicyPage() {
     <>
       <PageHero
         eyebrow="Privacy Policy"
-        title="Privacy built around trust."
-        body="OPAi is being built with a careful privacy posture for Canadian police officers, public safety workflows, and future secure product services."
+        title="Privacy choices should be visible and specific."
+        body="This policy explains how OPAi handles website inquiries, account information, AI requests, user-initiated media, location-based weather, and verified resource actions."
       />
       <section className="py-20">
         <Container className="max-w-4xl">
+          <p className="mb-8 text-sm text-white/48">Last updated: July 16, 2026</p>
           <div className="grid gap-5">
             {sections.map((section) => (
               <article key={section.title} className="glass rounded-[8px] p-6">

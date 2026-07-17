@@ -2,6 +2,7 @@
 
 import { Send } from "lucide-react";
 import { useState } from "react";
+import { site } from "@/lib/site";
 
 export function ContactForm() {
   const [sent, setSent] = useState(false);
@@ -11,7 +12,14 @@ export function ContactForm() {
       className="glass rounded-[8px] p-6"
       onSubmit={(event) => {
         event.preventDefault();
+        const data = new FormData(event.currentTarget);
+        const name = String(data.get("name") ?? "").trim();
+        const email = String(data.get("email") ?? "").trim();
+        const message = String(data.get("message") ?? "").trim();
+        const subject = encodeURIComponent(`OPAi website inquiry from ${name}`);
+        const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
         setSent(true);
+        window.location.href = `mailto:${site.email}?subject=${subject}&body=${body}`;
       }}
     >
       <div className="grid gap-5">
@@ -52,7 +60,7 @@ export function ContactForm() {
         </button>
         {sent ? (
           <p className="rounded-[8px] border border-ptsd-green/30 bg-ptsd-green/10 px-4 py-3 text-sm text-ptsd-green">
-            Thanks. Your message is ready for a production form endpoint.
+            Your email application should open with this message. You can also email {site.email} directly.
           </p>
         ) : null}
       </div>

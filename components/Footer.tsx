@@ -1,12 +1,12 @@
 import Link from "next/link";
 import { Facebook, Instagram, Mail, MessageCircle, Ribbon } from "lucide-react";
 import { Container } from "@/components/Container";
-import { externalLinks, navItems, site } from "@/lib/site";
+import { externalLinks, navItems, productLinks, site } from "@/lib/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-opai-blue/20 bg-black py-12">
-      <Container className="grid gap-10 lg:grid-cols-[1.1fr_0.8fr_0.8fr_1fr]">
+      <Container className="grid gap-10 md:grid-cols-2 lg:grid-cols-[1.15fr_0.75fr_0.9fr_0.75fr_1fr]">
         <div>
           <Link href="/" className="focus-ring inline-flex items-center gap-3 rounded-full">
             <span className="grid size-14 place-items-center rounded-full border border-opai-blue/60 bg-opai-blue/10 text-base font-black text-white shadow-glow">
@@ -34,11 +34,22 @@ export function Footer() {
           </div>
         </nav>
 
+        <nav aria-label="Product navigation">
+          <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/48">Product</h2>
+          <div className="mt-5 grid gap-3">
+            {productLinks.map((item) => (
+              <Link key={item.href} href={item.href} className="focus-ring rounded text-sm text-white/68 hover:text-white">
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </nav>
+
         <div>
           <h2 className="text-sm font-semibold uppercase tracking-[0.18em] text-white/48">Company</h2>
           <div className="mt-5 grid gap-3">
             <Link href="/download/" className="focus-ring rounded text-sm text-white/68 hover:text-white">
-              Download
+              App access
             </Link>
             <Link href="/privacy-policy/" className="focus-ring rounded text-sm text-white/68 hover:text-white">
               Privacy Policy
@@ -96,7 +107,7 @@ export function Footer() {
             <Ribbon className="size-11 shrink-0 text-ptsd-green" aria-hidden="true" />
             <p className="text-sm leading-6">
               <span className="block font-semibold text-ptsd-green">Supporting PTSD Awareness</span>
-              <span className="text-white/62">Every download helps break the stigma.</span>
+              <span className="text-white/62">Verified resources and support without stigma.</span>
             </p>
           </div>
         </div>

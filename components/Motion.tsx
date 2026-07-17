@@ -26,7 +26,7 @@ export function FadeIn({ children, delay = 0, className = "", ...props }: FadeIn
 export function HeroMotion({ children, className = "" }: { children: ReactNode; className?: string }) {
   return (
     <motion.div
-      initial={{ opacity: 0, scale: 0.96, y: 30 }}
+      initial={false}
       animate={{ opacity: 1, scale: 1, y: 0 }}
       transition={{ duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
       className={className}

@@ -65,13 +65,19 @@ a {
 .hero-scene-fallback {
   position: absolute;
   inset: 0;
-  background: #06101e url("/images/opai-hero.png") center right / cover no-repeat;
-  opacity: 0.42;
+  background: #02050a url("/images/canadian-blue-line-maple.png") 75% 18% / min(58vw, 620px) auto no-repeat;
+  opacity: 0.34;
 }
 
 @media (max-width: 767px) {
   .hero-scene canvas {
     opacity: 0.74;
+  }
+
+  .hero-scene-fallback {
+    background-position: 50% 12%;
+    background-size: min(82vw, 420px) auto;
+    opacity: 0.3;
   }
 }
 

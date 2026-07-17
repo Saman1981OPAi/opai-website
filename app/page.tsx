@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { CheckCircle2, Ribbon, ShieldCheck, Smartphone, UserRound } from "lucide-react";
+import { ButtonLink } from "@/components/ButtonLink";
 import { Container } from "@/components/Container";
 import { FeatureCard } from "@/components/FeatureCard";
 import { Hero } from "@/components/Hero";
 import { FadeIn } from "@/components/Motion";
 import { PlatformRoadmap } from "@/components/PlatformRoadmap";
 import { SectionHeader } from "@/components/SectionHeader";
-import { StoreButtons } from "@/components/StoreButtons";
 import { createPageMetadata, featureCards } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata("/");
@@ -30,7 +30,7 @@ export default function HomePage() {
           <SectionHeader
             eyebrow="OPAi Police features"
             title="Built around the daily realities of law enforcement."
-            body="From shift readiness to incident organization, translation, calendar reminders, court, training, AI assistance, notes, files, and notifications, OPAi Police is shaped for practical officer support."
+            body="From AI assistance and report writing to translation, paid duty, canvass, scheduling, weather, and verified support resources, OPAi Police keeps essential tools close at hand."
             align="center"
           />
           <div className="mt-10 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -115,10 +115,12 @@ export default function HomePage() {
               <Smartphone className="size-7 text-opai-blue-soft" aria-hidden="true" />
             </div>
             <div>
-              <p className="text-2xl font-semibold text-white">OPAi Police is currently in testing.</p>
-              <p className="mt-1 text-sm text-white/64">Operational Police Ai for Canadian police officers.</p>
+              <p className="text-2xl font-semibold text-white">Operational Police Ai for Canadian law enforcement.</p>
+              <p className="mt-1 text-sm text-white/64">Explore product capabilities or contact OPAi about authorized access.</p>
             </div>
-            <StoreButtons className="sm:justify-end" />
+            <ButtonLink href="/download/" className="sm:justify-self-end">
+              App access
+            </ButtonLink>
           </FadeIn>
         </Container>
       </section>
